@@ -1,12 +1,22 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { AuthRoutingModule } from "./auth/auth-routing-module";
+
+import { CommonModule } from '@angular/common';
+import { LanguageService } from './core/Services/language.service/language.service';
+import { HeaderComponent } from './shared/components/header/header';
+import { FundsComponent } from './shared/components/funds.component/funds.component';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss'],
+  imports: [AuthRoutingModule, CommonModule, HeaderComponent, FundsComponent],
+ template: `
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+  `,
 })
-export class App {
-  protected readonly title = signal('dynamic-dashboard');
+export class AppComponent {
+  
 }

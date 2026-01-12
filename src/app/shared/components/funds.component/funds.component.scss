@@ -1,0 +1,90 @@
+/* ===============================
+   Funds Dashboard (Scoped)
+================================ */
+
+.funds-dashboard {
+  background: #ffffff;
+  margin: 10px 10px;
+  padding: 10px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+/* 🔹 Summary Cards */
+.summary-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+
+  .label {
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 6px;
+  }
+}
+
+/* 🔹 Table */
+.funds-table {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+
+  thead {
+    background: #f9fafb;
+
+    th {
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      padding: 14px;
+      white-space: nowrap;
+    }
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  td {
+    font-size: 13px;
+    color: #374151;
+    padding: 14px;
+  }
+}
+
+/* 🔹 Status Badge */
+.status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  &.pending {
+    background: #fff7ed;
+    color: #f59e0b;
+  }
+
+  &.approved {
+    background: #ecfdf5;
+    color: #16a34a;
+  }
+
+  &.rejected {
+    background: #fef2f2;
+    color: #dc2626;
+  }
+}

@@ -1,1 +1,509 @@
-/* You can add global styles to this file, and also import other style files */
+/* ======================================================
+   DARK THEME ROOT (SINGLE SOURCE OF TRUTH)
+====================================================== */
+body.dark-theme {
+  background-color: #020617;
+  color: #e5e7eb;
+}
+
+/* ======================================================
+   FORCE APP STRUCTURE
+====================================================== */
+body.dark-theme app-root,
+body.dark-theme .app-layout,
+body.dark-theme .app-body,
+body.dark-theme .app-main,
+body.dark-theme .app-header,
+body.dark-theme .app-sidebar {
+  background: #020617 !important;
+  color: #e5e7eb;
+}
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+body.dark-theme .sidebar,
+body.dark-theme .app-sidebar {
+  background: #020617;
+  border-color: #1e293b;
+}
+body.dark-theme button, body.dark-theme .btn{
+    color: #ffffff!important;
+    background-color: #0d1c34!important;
+}
+body.dark-theme .sidebar-header {
+  border-bottom: 1px solid #1e293b;
+}
+
+body.dark-theme .nav-link {
+  color: #cbd5f5;
+}
+
+body.dark-theme .nav-link:hover,
+body.dark-theme .nav-link.active {
+  background: #1e293b;
+  color: #fca5a5;
+}
+
+body.dark-theme .badge {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+body.dark-theme .icon-btn {
+  
+  color: #ffffff!important;
+}
+/* ======================================================
+   HEADER & BUTTONS (GLOBAL)
+====================================================== */
+body.dark-theme .app-header {
+  border-bottom: 1px solid #1e293b;
+}
+
+body.dark-theme button,
+body.dark-theme .btn,
+body.dark-theme .icon-btn,
+body.dark-theme .profile-btn {
+  background: #020617;
+  border-color: #1e293b;
+  color: #e5e7eb;
+}
+
+body.dark-theme button:hover,
+body.dark-theme .btn:hover,
+body.dark-theme .icon-btn:hover {
+  background: #1e293b;
+}
+
+body.dark-theme .header-search input {
+  background: #020617;
+  border-color: #1e293b;
+  color: #e5e7eb;
+}
+
+body.dark-theme .header-search i {
+  color: #94a3b8;
+}
+
+body.dark-theme .header-logo {
+  filter: invert(1);
+}
+
+/* ======================================================
+   DROPDOWNS
+====================================================== */
+body.dark-theme .dropdown-menu {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+body.dark-theme .dropdown-item {
+  color: #e5e7eb;
+}
+
+body.dark-theme .dropdown-item:hover {
+  background: #1e293b;
+}
+
+/* ======================================================
+   BREADCRUMB
+====================================================== */
+body.dark-theme .app-breadcrumb {
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+body.dark-theme .breadcrumb-item {
+  color: #94a3b8;
+}
+
+body.dark-theme .breadcrumb-item a {
+  color: #e5e7eb;
+}
+
+body.dark-theme .breadcrumb-item.active {
+  color: #f8fafc;
+}
+
+body.dark-theme
+  .breadcrumb-item + .breadcrumb-item::before {
+  color: #475569;
+}
+
+/* ======================================================
+   TABLES (GLOBAL)
+====================================================== */
+body.dark-theme table,
+body.dark-theme thead,
+body.dark-theme tbody,
+body.dark-theme tr,
+body.dark-theme th,
+body.dark-theme td {
+  background: #020617 !important;
+  color: #e5e7eb !important;
+  border-color: #1e293b !important;
+}
+
+body.dark-theme tr:hover td {
+  background: #1e293b !important;
+}
+
+body.dark-theme .avatar {
+  background: #1e293b;
+}
+
+/* ======================================================
+   DATA TABLE / CUSTOM TABLE
+====================================================== */
+/* ======================================================
+   TABLES – DARK MODE
+====================================================== */
+body.dark-theme {
+
+  .table th {
+    color: #e5e7eb !important;
+    background-color: #020617 !important;
+    font-size: 16px !important;
+  }
+
+  table tbody tr td .selected {
+    color: #f8fafc !important;
+    background-color: #020617 !important;
+    font-size: 12px !important;
+  }
+
+  tbody,
+  td,
+  tfoot,
+  th,
+  thead,
+  tr {
+    color: #e5e7eb !important;
+    background-color: #020617 !important;
+    border-bottom: 1px solid #1e293b !important;
+    font-size: 12px !important;
+  }
+
+  /* ======================================================
+     CUSTOM TABLE
+  ====================================================== */
+  .custom-table {
+    width: 100%;
+    background-color: #020617;
+        margin-right: 14px!important;
+        overflow-x: none;
+  }
+
+  .custom-table thead {
+    height: 40px;
+  }
+
+  .custom-table tbody tr > td {
+    background-color: #020617;
+    transition: background-color 0.2s ease;
+  }
+
+  /* Alternate rows */
+  .custom-table tbody tr:nth-child(even) > td {
+    background-color: #0f172a;
+  }
+
+  /* Hover */
+  .custom-table tbody tr:hover > td {
+    background-color: #1e293b;
+  }
+
+  /* Selected row */
+  .custom-table tbody tr.selected > td {
+    background-color: #334155 !important;
+  }
+  .table-contract {
+    width: 97%!important;
+  overflow-x: auto;
+  }
+  .card-header{
+    background: #111529!important;
+    border-bottom: 1px solid #1e293b!important;
+    color: #e5e7eb;
+  }
+
+  /* ======================================================
+     DROPDOWN
+  ====================================================== */
+  .dropdown-menu {
+    background: #020617;
+    border-color: #1e293b;
+    text-align: right;
+  }
+
+  /* ======================================================
+     PAGE HEADER / TOOLBAR
+  ====================================================== */
+  .page-header {
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .table-main {
+    background: #0f172a;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px;
+  }
+
+  .table-responsive {
+    width: auto;
+    background-color: #020617!important;
+    overflow-x: hidden;
+  }
+
+  /* ======================================================
+     SEARCH & FILTER
+  ====================================================== */
+  .search-box {
+    background: #020617;
+    border: 1px solid #1e293b;
+  }
+
+  .search-box i {
+    color: #94a3b8;
+  }
+
+  .search-box input {
+    color: #e5e7eb;
+  }
+
+  .shortcut {
+    background: #020617;
+    border: 1px solid #1e293b;
+    color: #94a3b8;
+  }
+
+  .filter-btn {
+    background: #020617;
+    color: #e5e7eb;
+  }
+
+  .filter-btn:hover {
+    background: #1e293b;
+  }
+
+  /* ======================================================
+     HEADER ICONS
+  ====================================================== */
+  .header-icons i {
+    color: #94a3b8;
+  }
+
+  .header-icons i:hover {
+    color: #f8fafc;
+  }
+.main-title {
+    color: #f8fafc;
+  }
+  /* ======================================================
+     ACTIONS & BUTTONS
+  ====================================================== */
+  .action-icon {
+    color: #94a3b8;
+  }
+
+  .action-icon:hover {
+    color: #f8fafc;
+  }
+
+  .icon-btn {
+    background: transparent;
+    color: #94a3b8;
+  }
+
+  .icon-btn:hover {
+    background: #1e293b;
+    color: #f8fafc;
+  }
+
+  .icon-btn.active {
+    color: #22c55e;
+  }
+
+  .icon-btn:disabled {
+    opacity: 0.4;
+  }
+
+  /* ======================================================
+     USER / AVATAR
+  ====================================================== */
+  .avatar {
+    background: #1e293b;
+  }
+
+  .badge {
+    background: #1e293b;
+    color: #e5e7eb;
+  }
+}
+
+/* ======================================================
+   CONTRACT TABLE
+====================================================== */
+body.dark-theme .main-container {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-theme .table-contract {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark-theme .table-contract thead th {
+  color: #cbd5f5;
+  border-bottom: 1px solid #1e293b;
+}
+
+body.dark-theme .table-contract td.text-primary {
+  color: #60a5fa !important;
+}
+
+/* ======================================================
+   DASHBOARD TABS (DYNAMIC TABS)
+====================================================== */
+body.dark-theme .dashboard-tabs {
+  background: transparent;
+}
+
+body.dark-theme .tab-pill {
+  background: #020617;
+  border-color: #1e293b;
+  color: #cbd5e1;
+}
+
+body.dark-theme .tab-pill:hover {
+  background: #1e293b;
+}
+
+body.dark-theme .tab-pill.active {
+  color: #fca5a5;
+   background: #03081f!important;
+   border: 1px solid #023070!important;
+   border-bottom: none!important;
+}
+
+body.dark-theme .tab-content,
+body.dark-theme .tab-content-card {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+body.dark-theme .tab-content-card{
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6)!important;
+  background-color: #04091d!important;
+}
+body.dark-theme .add-tab-btn {
+  border: 1px solid #00368b;
+  background-color: #020617!important;
+}
+/* ======================================================
+   STAT CARDS / METRICS
+====================================================== */
+body.dark-theme .stat-card,
+body.dark-theme .balance-card,
+body.dark-theme .card {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+body.dark-theme .label {
+  color: #94a3b8;
+}
+
+body.dark-theme .amount,
+body.dark-theme .content h4 {
+  color: #f8fafc;
+}
+
+body.dark-theme .icon-wrapper {
+  background: #1e293b;
+  color: #a78bfa;
+}
+body.dark-theme .stat-card .card-bottom {
+   background: #1e293b;
+   border: 1px solid #023070!important;
+
+}
+
+/* ======================================================
+   FUNDS DASHBOARD
+====================================================== */
+body.dark-theme .funds-dashboard {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+}
+
+body.dark-theme .summary-card {
+  background: #1e273b;
+  border-color: #1f2937;
+}
+
+body.dark-theme .funds-table {
+  background: #0b1220;
+  border-color: #1f2937;
+}
+body.dark-theme .label {
+    color: #f1f7ff!important;
+}
+body.dark-theme .value {
+    color: #f1f7ff!important;
+}
+/* ======================================================
+   CHARTS (APEX / STATS)
+====================================================== */
+body.dark-theme .apexcharts-text {
+  fill: #e5e7eb !important;
+}
+
+body.dark-theme .apexcharts-gridline {
+  stroke: #1e293b !important;
+}
+
+body.dark-theme .apexcharts-tooltip {
+  background: #020617 !important;
+  color: #e5e7eb !important;
+}
+
+body.dark-theme .text-muted {
+  color: #f8fafc!important;
+}
+body.dark-theme .brands-box {
+    background: #020617 !important;
+    border-radius: 16px;
+    
+    border: 1px solid #1f293e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+/* ======================================================
+   CHART STATUS / LEGENDS
+====================================================== */
+body.dark-theme .chart-legend,
+body.dark-theme .chart-status {
+  color: #94a3b8;
+}
+/* 🌙 Dark mode */
+body.dark-theme {
+  .page-btn {
+    background: #020617;
+    border-color: #1e293b;
+    color: #e5e7eb;
+
+    &:hover:not(:disabled) {
+      background: #1e293b;
+    }
+  }
+
+  .page-info {
+    color: #cbd5e1;
+  }
+}

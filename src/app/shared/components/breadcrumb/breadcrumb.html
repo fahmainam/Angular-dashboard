@@ -1,0 +1,28 @@
+<nav class="app-breadcrumb" dir="rtl" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <!-- Home -->
+    <li class="breadcrumb-item">
+      <a routerLink="/dashboard">
+        <i class="bi bi-house"></i>
+      </a>
+    </li>
+
+    <!-- Dynamic -->
+    <li
+      *ngFor="let item of items; let last = last"
+      class="breadcrumb-item"
+      [class.active]="last"
+      [attr.aria-current]="last ? 'page' : null"
+    >
+      <ng-container *ngIf="!last && item.link; else current">
+        <a [routerLink]="item.link">{{ item.label }}</a>
+      </ng-container>
+
+      <ng-template #current>
+        {{ item.label }}
+      </ng-template>
+    </li>
+
+  </ol>
+</nav>

@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   font-family: "Frutiger LT Arabic";
+}
+
+.app-header {
+  height: 80px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  direction: rtl;
+ 
+}
+
+/* Icons */
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  i {
+    font-size: 16px;
+    color: #374151;
+  }
+
+  &:hover {
+    background: #f3f4f6;
+  }
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 10px;
+}
+
+/* Search */
+.header-search {
+  position: relative;
+  width: 100%;
+
+  input {
+    padding-right: 40px;
+    border-radius: 12px;
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    color: #9ca3af;
+  }
+}
+.system-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Cairo', sans-serif;
+}
+
+.main-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.sub-title {
+  font-size: 13px;
+  font-weight: 400;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background-color: #d1d5db;
+}
+
+/* Profile */
+.profile-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 18px;
+  }
+}
+
+/* Dropdown */
+.notifications-dropdown {
+  width: 300px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+/* Logo */
+.header-logo {
+  height: 60px;
+  width: auto;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .app-header {
+  height: 200px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  direction: rtl;
+  text-align: center;
+}
+    .profile{
+        display: none;
+        visibility: hidden;
+    }
+    .icons{
+        align-items: center;
+        padding-right: 150px !important;
+    }
+    .system-title{
+        align-items: center;
+        padding-right: 118px !important;
+    }
+    .header-logo {
+height: 60px;
+        width: auto;
+        margin-right: 150px;
+        margin-bottom: 11px;
+        object-fit: contain;
+}
+}

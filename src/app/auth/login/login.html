@@ -1,0 +1,94 @@
+<div class="login-page" dir="rtl">
+
+  <!-- Left visual section -->
+  <div class="login-visual d-none d-lg-flex">
+    <div class="overlay"></div>
+
+    <div class="visual-content">
+      <h1>ابدأ بتحويل أفكارك إلى حقيقة</h1>
+      <p>أنشئ حسابك وابدأ باستخدام النظام المالي بسهولة وأمان</p>
+    </div>
+  </div>
+
+  <!-- Right form section -->
+  <div class="login-form-wrapper">
+    <div class="login-card">
+
+      <h3 class="title">النظام المالي</h3>
+
+      <!-- LOGIN MODE -->
+      <ng-container *ngIf="!isForgotMode">
+        <p class="subtitle">تسجيل الدخول</p>
+
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+
+          <div class="form-group">
+            <label>اسم المستخدم</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="mail@moi.gov.qa"
+              formControlName="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>كلمة المرور</label>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="********"
+              formControlName="password"
+            />
+          </div>
+
+          <!-- Forgot password -->
+          <div class="text-end mb-3">
+            <a class="link" (click)="toggleForgot()">
+              نسيت كلمة المرور؟
+            </a>
+          </div>
+
+          <button type="submit" class="btn btn-login w-100">
+            تسجيل دخول
+          </button>
+
+          <div class="text-center mt-3">
+            <a routerLink="/auth/register" class="link">
+              ليس لديك حساب؟ إنشاء حساب
+            </a>
+          </div>
+        </form>
+      </ng-container>
+
+      <!-- FORGOT PASSWORD MODE -->
+      <ng-container *ngIf="isForgotMode">
+        <p class="subtitle">استعادة كلمة المرور</p>
+
+        <form [formGroup]="forgotForm" (ngSubmit)="submitForgot()">
+
+          <div class="form-group">
+            <label>البريد الإلكتروني</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="mail@moi.gov.qa"
+              formControlName="email"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-login w-100">
+            إرسال رابط الاستعادة
+          </button>
+
+          <div class="text-center mt-3">
+            <a class="link" (click)="toggleForgot()">
+              العودة إلى تسجيل الدخول
+            </a>
+          </div>
+        </form>
+      </ng-container>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,158 @@
+<header class="app-header px-3 py-2">
+    <!-- <h5>{{ lang.translate('dashboard') }}</h5> -->
+  <div class="row align-items-center gx-0">
+     <div class="col-md-2"> 
+        <div class="d-flex align-items-center flex-shrink-0">
+ <img
+  src="assets/moi.png"
+  class="header-logo  d-md-block px-2"
+  alt="MOI Logo"
+/>
+
+    </div></div>
+    <div class="col-md-3 ">
+       
+        <div class="system-title  px-3" dir="rtl">
+  <span class="main-title"><h5>النظام المالي</h5></span>
+  <span class="divider"></span>
+  <span class="sub-title">إدارة تطوير الأنظمة</span>
+</div>
+    </div>
+    <div class="col-md-2">
+         <div class="flex-grow-1 d-none d-md-flex justify-content-center">
+      <div class="header-search">
+        <input type="text" class="form-control" placeholder="بحث" />
+        <i class="bi bi-search"></i>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+         <div data-bs-toggle="dropdown" class="d-flex btn border-0 profile align-items-center gap-2 px-4 flex-shrink-0">
+
+    
+      <!-- User Info (Desktop only) -->
+        <div class="dropdown">
+        <button class="profile-btn" >
+          <i class="bi bi-person"></i>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a class="dropdown-item">
+              <i class="bi bi-person me-2"></i>
+              الملف الشخصي
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item">
+              <i class="bi bi-gear me-2"></i>
+              الإعدادات
+            </a>
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <a
+              class="dropdown-item text-danger"
+              routerLink="/auth/login"
+            >
+              <i class="bi bi-box-arrow-right me-2"></i>
+              تسجيل الخروج
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="text-end d-none d-md-block">
+        <div class="fw-semibold">{{ user.name }}</div>
+        <small class="text-muted">{{ user.role }}</small>
+      </div>
+            <i class="bi bi-chevron-down"></i>
+      <!-- Profile -->
+     
+    </div>
+    </div>
+    <div class="col-md-2">
+         <div class="d-flex icons gap-2 px-4 flex-shrink-0">
+         <!-- Night Mode -->
+<button class="btn icon-btn theme-toggle" (click)="toggleTheme()">
+  <i class="bi" [class.bi-moon]="!themeService.isDark()"
+             [class.bi-sun]="themeService.isDark()"></i>
+</button>
+
+
+      <!-- Calendar -->
+      <button class="icon-btn" title="التقويم">
+        <i class="bi bi-calendar-event"></i>
+      </button>
+
+      <!-- Messages -->
+      <div class="dropdown">
+        <button
+          class="icon-btn position-relative"
+          data-bs-toggle="dropdown"
+          title="الرسائل"
+        >
+          <i class="bi bi-chat-dots"></i>
+          <span class="badge  notification-badge">3</span>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end notifications-dropdown">
+          <li class="dropdown-header">الرسائل</li>
+          <li>
+            <a class="dropdown-item">
+              <strong>الإدارة</strong>
+              <div class="text-muted small">يرجى مراجعة التقرير</div>
+            </a>
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <a class="dropdown-item text-center text-primary">
+              عرض جميع الرسائل
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Notifications -->
+      <div class="dropdown">
+        <button
+          class="icon-btn position-relative"
+          data-bs-toggle="dropdown"
+          title="الإشعارات"
+        >
+          <i class="bi bi-bell-fill"></i>
+          <span class="badge notification-badge">
+            {{ notifications.length }}
+          </span>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end notifications-dropdown">
+          <li class="dropdown-header">الإشعارات</li>
+          <li *ngFor="let n of notifications">
+            <a class="dropdown-item">
+              <div class="fw-semibold">{{ n.text }}</div>
+              <small class="text-muted">{{ n.time }}</small>
+            </a>
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <a class="dropdown-item text-center text-primary">
+              عرض جميع الإشعارات
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Language Toggle -->
+
+
+
+
+ </div>
+
+    </div>
+</div>
+  
+  
+</header>
+
+<!-- Breadcrumb -->

@@ -1,0 +1,56 @@
+<div class="funds-dashboard" dir="rtl">
+
+  <!-- 🔹 Page Title -->
+  <div class="mb-4">
+    <h5 class="fw-bold">لوحة متابعة طلبات الأموال</h5>
+    <small class="text-muted">نظرة عامة على طلبات الإدارات</small>
+  </div>
+
+  <!-- 🔹 Summary Cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-lg-3 col-md-6" *ngFor="let card of summary">
+      <div class="summary-card">
+        <div class="label">{{ card.label }}</div>
+        <div class="value">{{ card.value }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Funds Table -->
+  <div class="table-responsive">
+    <table class="table table-borderless align-middle funds-table">
+      <thead>
+        <tr>
+          <th>رقم الطلب</th>
+          <th>الإدارة</th>
+          <th>المبلغ (ر.ق)</th>
+          <th>التاريخ</th>
+          <th>الحالة</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of paginatedFunds">
+          <td class="fw-semibold">{{ item.id }}</td>
+          <td>{{ item.department }}</td>
+          <td>{{ item.amount | number }}</td>
+          <td>{{ item.date }}</td>
+          <td>
+            <span class="status" [ngClass]="item.status">
+              {{ getStatusLabel(item.status) }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 🔹 Pagination (OUTSIDE table ✔) -->
+  <app-pagination
+    [totalItems]="items.length"
+    [pageSize]="pageSize"
+    [currentPage]="currentPage"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination>
+
+</div>

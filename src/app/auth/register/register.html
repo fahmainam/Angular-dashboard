@@ -1,0 +1,100 @@
+<div class="auth-page" dir="rtl">
+
+  <!-- LEFT VISUAL (same as login) -->
+  <div class="auth-visual d-none d-lg-flex">
+    <div class="overlay"></div>
+
+    <div class="visual-content">
+      <h1>أنشئ حسابك الآن</h1>
+      <p>
+        انضم إلى النظام المالي وابدأ إدارة معاملاتك بكل سهولة وأمان
+      </p>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="auth-form-wrapper">
+    <div class="auth-card">
+
+      <h3 class="title">النظام المالي</h3>
+      <p class="subtitle">إنشاء حساب جديد</p>
+
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label>الاسم الكامل</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="الاسم الكامل"
+          />
+          <small class="text-danger" *ngIf="submitted && f('name')?.invalid">
+            الاسم مطلوب (٣ أحرف على الأقل)
+          </small>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label>البريد الإلكتروني</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="mail@moi.gov.qa"
+          />
+          <small class="text-danger" *ngIf="submitted && f('email')?.invalid">
+            بريد إلكتروني صالح مطلوب
+          </small>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label>كلمة المرور</label>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="********"
+          />
+          <small class="text-danger" *ngIf="submitted && f('password')?.invalid">
+            كلمة المرور لا تقل عن 6 أحرف
+          </small>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label>تأكيد كلمة المرور</label>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="confirmPassword"
+            placeholder="********"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && registerForm.errors?.['passwordMismatch']"
+          >
+            كلمات المرور غير متطابقة
+          </small>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-auth w-100">
+          إنشاء حساب
+        </button>
+
+        <!-- Login -->
+        <div class="text-center mt-3">
+          <a routerLink="/auth/login" class="link">
+            لديك حساب بالفعل؟ تسجيل الدخول
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

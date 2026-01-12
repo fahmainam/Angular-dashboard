@@ -1,0 +1,29 @@
+<div class="pagination-container" dir="rtl">
+ 
+
+  <!-- Right side (Page numbers) -->
+  <div class="pagination-right">
+    <span class="page-info">
+      الصفحة {{ currentPage }} من {{ totalPages }}
+    </span>
+  </div>
+
+   <!-- Left side (Previous / Next) -->
+  <div class="pagination-left">
+    <button
+      class="page-btn"
+      (click)="prev()"
+      [disabled]="currentPage === 1"
+    >
+      السابق
+    </button>
+
+    <button
+      class="page-btn"
+      (click)="next()"
+      [disabled]="currentPage === totalPages"
+    >
+      التالي
+    </button>
+  </div>
+</div>

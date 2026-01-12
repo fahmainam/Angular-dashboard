@@ -1,0 +1,772 @@
+html[dir='rtl'] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='ltr'] {
+  direction: ltr;
+  text-align: left;
+}
+
+
+
+/* Global body scroll fix */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    /* 🔥 removes body scroll */
+}
+
+/* RTL */
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+/* LTR */
+html[dir="ltr"] body {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Bootstrap ms-auto fix */
+html[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+html[dir="ltr"] .ms-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+/* Scrollbar styles */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow: auto;
+        /* Enable body scroll on small screens */
+    }
+    body:not(.dark-theme) .table-responsive-One {
+    width: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+}
+
+/* ===============================
+   DARK THEME ROOT
+================================ */
+body.theme-dark {
+    background-color: #020617;
+    color: #e5e7eb;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+body.theme-dark .sidebar,
+body.theme-dark .app-sidebar {
+    background: #020617;
+    border-color: #1e293b;
+}
+
+body.theme-dark .sidebar-header {
+    border-bottom-color: #1e293b;
+}
+
+body.theme-dark .toggle-btn {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+body.theme-dark .nav-link {
+    color: #cbd5f5;
+}
+
+body.theme-dark .nav-link:hover,
+body.theme-dark .nav-link.active {
+    background: #1e293b;
+    color: #fca5a5;
+}
+
+body.theme-dark .badge {
+    background: #1e293b;
+    color: #e5e7eb;
+}
+
+/* ===============================
+   HEADER
+================================ */
+body.theme-dark .app-header {
+    background: #020617;
+    border-bottom-color: #1e293b;
+}
+
+body.theme-dark .icon-btn {
+    background: #020617;
+    border-color: #1e293b;
+    color: #e5e7eb;
+}
+
+body.theme-dark .icon-btn:hover {
+    background: #1e293b;
+}
+
+body.theme-dark .profile-btn {
+    background: #020617;
+    border-color: #1e293b;
+    color: #e5e7eb;
+}
+
+body.theme-dark .header-search input {
+    background: #020617;
+    border-color: #1e293b;
+    color: #e5e7eb;
+}
+body.theme-dark .header-logo{
+    filter: invert(1);
+}
+body.theme-dark .text-muted {
+    color: #7a7a7a !important;
+}
+body.theme-dark .header-search i {
+    color: #94a3b8;
+}
+
+body.theme-dark .main-title {
+    color: #f8fafc;
+}
+
+body.theme-dark .sub-title {
+    color: #94a3b8;
+}
+
+body.theme-dark .divider {
+    background-color: #334155;
+}
+
+/* ===============================
+   DROPDOWNS
+================================ */
+body.theme-dark .dropdown-menu {
+    background: #020617;
+    border-color: #1e293b;
+}
+
+body.theme-dark .dropdown-item {
+    color: #e5e7eb;
+}
+
+body.theme-dark .dropdown-item:hover {
+    background: #1e293b;
+}
+
+/* ===============================
+   TABLES
+================================ */
+body.theme-dark .table th {
+    color: #e5e7eb!important;
+    background-color: #020617!important;
+}
+body.theme-dark .table-responsive .table th, td {
+    background-color: #020617!important;
+    color: #e5e7eb!important;
+}
+body.theme-dark .table-responsive .table tr:nth-child(even) td {
+    background-color: #020617!important;
+    color: #e5e7eb!important;
+}
+body.theme-dark .table-responsive .table tr:nth-child(odd) td {
+    background-color: #020617!important;
+    color: #e5e7eb!important;
+}
+body.theme-dark .avatar{
+    background-color: #1e293b;
+}
+body.theme-dark table tbody tr td .selected {
+    color: #e5e7eb!important;
+    background-color: #020617!important;
+}
+
+body.dark-theme tbody, td, tfoot, th, thead, tr {
+    color: #e5e7eb!important;
+    border-bottom: 1px solid rgb(39, 39, 39)!important;
+    background-color: #020617!important;
+    
+}
+body:not(.dark-theme) tbody, td, tfoot, th, thead, tr {
+    color: #000000!important;
+    border-bottom: 1px solid rgb(195, 195, 195)!important;
+    background-color: hsl(0, 0%, 100%)!important;
+
+   
+   
+}
+body:not(.dark-theme) .table-responsive-One {
+    width: 95%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+body:not(.dark-theme) .table-contract thead tbody tr td {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    box-shadow: none;
+ border-top-left-radius: 14px;
+ border-top-right-radius: 14px;
+    padding: 10px 2px;
+    margin: 5px!important;
+}
+body.theme-dark .table-main {
+    background: #020617;
+    border-color: #1e293b;
+    box-shadow: none;
+}
+
+body.theme-dark .custom-table tbody tr>td {
+    background-color: #020617;
+    color: #e5e7eb;
+}
+/* ===============================
+   Contracts Container – Dark
+================================ */
+body.dark-theme {
+
+  /* Outer container */
+  .main-container {
+    margin-left: 18px;
+    padding: 12px;
+    border-radius: 14px;
+    background: #0f172a;
+    border: 1px solid #1f2937;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 6px 14px;
+  }
+
+  /* ===============================
+     Table Base
+  ================================ */
+  .table-contract {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #020617;
+    color: #e5e7eb;
+    border-radius: 14px;
+    overflow: hidden;
+    font-size: 12px;
+  }
+
+  /* ===============================
+     Header
+  ================================ */
+  .table-contract thead {
+    background: #020617;
+  }
+
+  .table-contract thead th {
+    padding: 14px 16px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 13px;
+    color: #cbd5f5;
+    border-bottom: 1px solid #1e293b;
+    white-space: nowrap;
+  }
+
+  /* ===============================
+     Body Rows
+  ================================ */
+  .table-contract tbody tr {
+    transition: background-color 0.2s ease;
+  }
+
+  .table-contract tbody tr:hover {
+    background-color: #020617;
+  }
+
+  .table-contract tbody td {
+    padding: 14px 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #020617;
+  }
+
+  .table-contract tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ===============================
+     Contract Number
+  ================================ */
+  .table-contract td.text-primary {
+    color: #60a5fa !important;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* ===============================
+     Vendor Column
+  ================================ */
+  .table-contract td img {
+    width: 70px;
+    height: 30px;
+    background: #020617;
+    border-radius: 6px;
+    padding: 4px;
+    object-fit: contain;
+  }
+
+  .table-contract .vendor-name {
+    font-size: 12px;
+    font-weight: 400;
+    color: #e5e7eb;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+
+  /* ===============================
+     Date Column
+  ================================ */
+  .table-contract td.date {
+    font-size: 12px;
+    font-weight: 400;
+    color: #cbd5f5;
+  }
+
+  /* ===============================
+     Status Column
+  ================================ */
+  .table-contract app-contract-status-bar {
+    display: block;
+    min-width: 180px;
+  }
+
+}
+
+body.theme-dark .custom-table tbody tr:nth-child(even)>td {
+    background-color: #020617;
+}
+
+body.theme-dark .custom-table tbody tr:hover>td {
+    background-color: #1e293b;
+}
+
+body.theme-dark .custom-table tbody tr.selected>td {
+    background-color: #334155 !important;
+}
+
+/* ===============================
+   PAGE HEADER / TOOLBAR
+================================ */
+body.theme-dark .page-header {
+    background: #020617;
+    border-bottom-color: #1e293b;
+}
+
+body.theme-dark .search-box,
+body.theme-dark .filter-btn {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+body.theme-dark .search-box i {
+    color: #94a3b8;
+}
+
+body.theme-dark .filter-btn:hover {
+    background: #1e293b;
+}
+
+body.theme-dark .shortcut {
+    background: #020617;
+    border-color: #1e293b;
+    color: #94a3b8;
+}
+
+/* ===============================
+   ACTION ICONS
+================================ */
+body.theme-dark .action-icon,
+body.theme-dark .header-icons i {
+    color: #94a3b8;
+}
+
+body.theme-dark .action-icon:hover,
+body.theme-dark .header-icons i:hover {
+    color: #f8fafc;
+}
+
+body.theme-dark .icon-btn.active {
+    color: #22c55e;
+}
+
+/* ===============================
+   BREADCRUMB
+================================ */
+body.theme-dark .app-breadcrumb {
+    background: #020617;
+    border-bottom-color: #1e293b;
+}
+
+body.theme-dark .breadcrumb-item {
+    color: #94a3b8;
+}
+
+body.theme-dark .breadcrumb-item a {
+    color: #e5e7eb;
+}
+
+body.theme-dark .breadcrumb-item.active {
+    color: #f8fafc;
+}
+
+body.theme-dark .breadcrumb-item+.breadcrumb-item::before {
+    color: #475569;
+}
+
+/* ===============================
+   CONTENT AREAS
+================================ */
+body.theme-dark .app-body {
+    background-color: #020617;
+}
+
+body.theme-dark .app-main {
+    background-color: transparent;
+}
+
+body.theme-dark .card {
+    background-color: #020617;
+    border-color: #1e293b;
+}
+
+/* ======================================================
+   LOGIN & AUTH PAGES
+====================================================== */
+body.theme-dark .login-page,
+body.theme-dark .auth-page {
+    background: #020617;
+    color: #e5e7eb;
+}
+
+body.theme-dark .login-form-wrapper,
+body.theme-dark .auth-form-wrapper {
+    background: #020617;
+}
+
+body.theme-dark .login-card,
+body.theme-dark .auth-card {
+    background: #020617;
+}
+
+body.theme-dark .title {
+    color: #f8fafc;
+}
+
+body.theme-dark .subtitle {
+    color: #94a3b8;
+}
+
+body.theme-dark .form-group label {
+    color: #cbd5e1;
+}
+
+body.theme-dark .form-control {
+    background: #020617;
+    border-color: #1e293b;
+    color: #e5e7eb;
+}
+
+body.theme-dark .form-control::placeholder {
+    color: #64748b;
+}
+
+body.theme-dark .form-control:focus {
+    border-color: #be123c;
+}
+
+body.theme-dark .link {
+    color: #fca5a5;
+}
+
+body.theme-dark .link:hover {
+    text-decoration: underline;
+}
+
+/* ======================================================
+   DASHBOARD TABS
+====================================================== */
+body.theme-dark .dashboard-tabs {
+    background: transparent;
+}
+
+body.theme-dark .add-tab-btn {
+    background: #020617;
+    border-color: #1e293b;
+    color: #e5e7eb;
+}
+
+body.theme-dark .add-tab-btn:hover {
+    background: #1e293b;
+}
+
+body.theme-dark .tab-pill {
+    background: #020617;
+    border-color: #1e293b;
+    color: #cbd5e1;
+}
+
+body.theme-dark .tab-pill:hover {
+    background: #1e293b;
+}
+
+body.theme-dark .tab-pill.active {
+    background: #020617;
+    color: #fca5a5;
+    border-color: #1e293b;
+}
+
+body.theme-dark .close-btn {
+    color: #94a3b8;
+}
+
+body.theme-dark .close-btn:hover {
+    color: #f87171;
+}
+
+body.theme-dark .tab-content,
+body.theme-dark .tab-content-card {
+    background: #020617 !important;
+    border-color: #1e293b;
+}
+
+body.theme-dark .dashboard-tabs-content {
+    border-right-color: #1e293b;
+}
+
+/* ======================================================
+   STATS & CARDS
+====================================================== */
+body.theme-dark .stat-card,
+body.theme-dark .balance-card {
+    background: #020617;
+    border-color: #1e293b;
+    box-shadow: none;
+}
+
+body.theme-dark .stat-card:hover,
+body.theme-dark .balance-card:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.theme-dark .label {
+    color: #94a3b8;
+}
+
+body.theme-dark .content h4,
+body.theme-dark .amount,
+body.theme-dark .balance-card .amount {
+    color: #f8fafc;
+}
+
+body.theme-dark .content .title {
+    color: #cbd5e1;
+}
+
+body.theme-dark .content span {
+    color: #94a3b8;
+}
+
+body.theme-dark .icon-wrapper {
+    background: #1e293b;
+    color: #a78bfa;
+}
+
+/* ======================================================
+   CARD FOOTER / TRENDS
+====================================================== */
+body.theme-dark .card-bottom {
+    background: #020617;
+    border-top-color: #1e293b;
+}
+
+body.theme-dark .trend-up {
+    color: #22c55e;
+}
+
+body.theme-dark .trend-down {
+    color: #f87171;
+}
+
+body.theme-dark .period {
+    color: #94a3b8;
+}
+
+/* ======================================================
+   CAROUSEL & SLIDER
+====================================================== */
+body.theme-dark .carousel-control-prev-icon,
+body.theme-dark .carousel-control-next-icon {
+    filter: invert(1);
+}
+
+body.theme-dark .slider-btn-prev,
+body.theme-dark .slider-btn-next {
+    background-color: #020617 !important;
+    border-color: #1e293b;
+    color: #e5e7eb;
+}
+
+body.theme-dark .slider-btn-prev:hover,
+body.theme-dark .slider-btn-next:hover {
+    background-color: #1e293b !important;
+}
+body.dark-theme {
+
+  .table-contract {
+    background: #0f172a;
+    border-color: #1e293b;
+    color: #e5e7eb;
+  }
+
+  .table-contract thead {
+    background: #020617;
+  }
+
+  .table-contract thead th {
+    color: #cbd5f5;
+    border-color: #1e293b;
+  }
+
+}
+/* ===============================
+   Funds Dashboard – Dark Mode
+   Scoped under body.dark-theme
+================================ */
+body.dark-theme {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* 🔥 FORCE ALL COMPONENTS */
+body.dark-theme app-root,
+body.dark-theme .app-layout,
+body.dark-theme .app-header,
+body.dark-theme .app-sidebar,
+body.dark-theme .app-main {
+  background: #020617 !important;
+  color: #e5e7eb;
+}
+
+/* example */
+body.dark-theme .funds-dashboard {
+  background: #020617 !important;
+  border-color: #1e293b;
+}
+
+body.dark-theme {
+
+  .funds-dashboard {
+    background: #0f172a;                 /* dark surface */
+    margin: 10px 10px;
+    padding: 10px 14px;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+  }
+
+  /* 🔹 Summary Cards */
+  .summary-card {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+
+    .label {
+      font-size: 13px;
+      color: #9ca3af;                    /* muted text */
+    }
+
+    .value {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f9fafb;                    /* primary text */
+      margin-top: 6px;
+    }
+  }
+
+  /* 🔹 Table */
+  .funds-table {
+    background: #0b1220;
+    border: 1px solid #1f2937;
+    border-radius: 14px;
+    overflow: hidden;
+
+    thead {
+      background: #111827;
+
+      th {
+        font-size: 13px;
+        font-weight: 600;
+        color: #e5e7eb;
+        padding: 14px;
+        white-space: nowrap;
+        border-bottom: 1px solid #1f2937;
+      }
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #1f2937;
+
+      &:hover {
+        background: #111827;             /* subtle hover */
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    td {
+      font-size: 13px;
+      color: #d1d5db;
+      padding: 14px;
+    }
+  }
+
+  /* 🔹 Status Badge */
+  .status {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &.pending {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+    }
+
+    &.approved {
+      background: rgba(22, 163, 74, 0.15);
+      color: #22c55e;
+    }
+
+    &.rejected {
+      background: rgba(220, 38, 38, 0.15);
+      color: #f87171;
+    }
+  }
+}

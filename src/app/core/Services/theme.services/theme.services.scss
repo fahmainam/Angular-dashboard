@@ -1,0 +1,47 @@
+/* =========================
+   LIGHT THEME (DEFAULT)
+========================= */
+.theme-light {
+  --bg-main: #f6f8fc;
+  --bg-surface: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+/* =========================
+   DARK THEME
+========================= */
+.theme-dark {
+  --bg-main: #020617;
+  --bg-surface: #020617;
+  --text-primary: #e5e7eb;
+  --text-secondary: #94a3b8;
+  --border-color: #1e293b;
+}
+
+/* =========================
+   GLOBAL APPLICATION USAGE
+========================= */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.app-header,
+.login-card,
+.card,
+.dropdown-menu {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+.border-bottom {
+  border-color: var(--border-color) !important;
+}

@@ -1,0 +1,29 @@
+/* ===============================
+   Language Direction
+================================ */
+
+body {
+  font-family: 'Cairo', sans-serif;
+}
+
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.ltr {
+  direction: ltr;
+  text-align: left;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Bootstrap fixes */
+.rtl .ms-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.ltr .me-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}

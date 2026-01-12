@@ -1,0 +1,74 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed" dir="rtl">
+
+  <!-- Header -->
+  <div class="sidebar-header d-flex align-items-center justify-content-between">
+    <div>
+      <h6 class="mb-0 fw-bold">محمد عبد الله</h6>
+      <small class="text-muted">إدارة تطوير الأنظمة</small>
+    </div>
+
+    <button class="btn toggle-btn" (click)="toggleSidebar()">
+      <i class="bi bi-chevron-double-right"></i>
+    </button>
+  </div>
+
+  <!-- Menu -->
+  <ul class="nav flex-column mt-3">
+
+    <li *ngFor="let item of menu" class="nav-item">
+
+      <!-- Parent -->
+      <a
+        class="nav-link"
+        (click)="item.children ? toggle(item) : navigate(item)"
+      >
+        <i class="bi" [ngClass]="item.icon"></i>
+        <span class="label">{{ item.label }}</span>
+
+        <span *ngIf="item.badge" class="badge">{{ item.badge }}</span>
+
+        <i *ngIf="item.children"
+           class="bi bi-chevron-down ms-auto"
+           [class.rotate]="item.expanded"></i>
+      </a>
+
+      <!-- Children -->
+      <ul *ngIf="item.children && item.expanded" class="submenu">
+        <li *ngFor="let child of item.children">
+
+          <a
+            class="nav-link"
+            (click)="child.children ? toggle(child) : navigate(child)"
+          >
+            <i *ngIf="child.icon" class="bi" [ngClass]="child.icon"></i>
+            {{ child.label }}
+
+            <i *ngIf="child.children"
+               class="bi bi-chevron-down ms-auto"
+               [class.rotate]="child.expanded"></i>
+          </a>
+
+          <!-- Sub children -->
+          <ul *ngIf="child.children && child.expanded" class="submenu">
+            <li *ngFor="let sub of child.children">
+              <a class="nav-link"  (click)="navigate(sub)">
+                {{ sub.label }}
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+
+    </li>
+
+    <!-- Logout -->
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/auth/login">
+        <i class="bi bi-box-arrow-right"></i>
+        <span class="label">خروج</span>
+      </a>
+    </li>
+
+  </ul>
+</aside>

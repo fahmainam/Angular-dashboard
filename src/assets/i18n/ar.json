@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "لوحة التحكم",
+    "language": "English"
+  },
+  "sidebar": {
+    "home": "الرئيسية",
+    "orders": "الطلبات",
+    "logout": "تسجيل الخروج"
+  }
+}

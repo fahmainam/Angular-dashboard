@@ -1,0 +1,62 @@
+<div class="dashboard-tabs" dir="rtl">
+
+  <!-- Tabs bar -->
+  <div class="tabs-bar">
+
+    <div class="tabs-scroll">
+      <button
+        *ngFor="let tab of tabs; trackBy: trackById"
+        type="button"
+        class="tab-pill"
+        [ngClass]="{ active: tab.active }"
+        (click)="setActive(tab)"
+      >
+        <span class="tab-label">{{ tab.label }}</span>
+
+        <span
+          class="close-btn"
+          (click)="removeTab(tab, $event)"
+        >
+          ×
+        </span>
+      
+      </button>
+    </div>
+
+    <button class="add-tab-btn" (click)="addTab()">+</button>
+  </div>
+
+</div>
+
+<!-- TAB CONTENT -->
+<div class="tab-content-wrapper" dir="rtl">
+
+  <!-- Dashboard tab -->
+  <ng-template #normalTab>
+    <div class="tab-content-card" *ngIf="activeTab">
+      <h5 class="tab-title">{{ activeTab.label }}</h5>
+      <p class="tab-content-text">{{ activeTab.content }}</p>
+     
+    </div>
+  </ng-template>
+
+  <ng-container *ngIf="activeTab?.id === 1; else normalTab">
+    <div class="tab-content-card dashboard-tabs-content">
+      <app-stats-card [statsCards]="statsCards"></app-stats-card>
+      <section class="data-table">
+        <app-orders-table></app-orders-table>
+        <div class="row g-3 px-2">
+  <div class="col-12 col-md-6 ">
+    <app-budget-chart></app-budget-chart>
+  </div>
+
+  <div class="col-12 col-md-6 brands-box budget-chart-card  ">
+    <app-contracts></app-contracts>
+  </div>
+</div>
+
+      </section>
+    </div>
+  </ng-container>
+
+</div>

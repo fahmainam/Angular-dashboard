@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "Dashboard",
+    "language": "Arabic"
+  },
+  "sidebar": {
+    "home": "Home",
+    "orders": "Orders",
+    "logout": "Logout"
+  }
+}

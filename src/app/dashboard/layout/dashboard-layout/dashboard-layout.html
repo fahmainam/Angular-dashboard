@@ -1,0 +1,17 @@
+<header class="app-header">
+  <app-header></app-header>
+</header>
+
+<div class="app-breadcrumb">
+  <app-breadcrumb [items]="breadcrumbItems"></app-breadcrumb>
+</div>
+
+<div class="app-body d-flex">
+  <aside class="app-sidebar">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <main class="app-main flex-grow-1">
+    <router-outlet></router-outlet>
+  </main>
+</div>

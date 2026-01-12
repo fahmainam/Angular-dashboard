@@ -1,0 +1,140 @@
+/* ===============================
+   Contracts Container
+================================ */
+
+.brand-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+body:not(.dark-theme) tbody, td, tfoot, th, thead, tr {
+ line-height: 40px!important;
+   
+.date{
+    font-size: 11px!important;}  
+}  
+.box-1{
+      width: 200px!important;
+    font-size: 10px!important;
+}
+.number{
+    font-size: 11px!important;
+} 
+.box{
+      width: 150px!important;
+    font-size: 10px!important;
+}
+/* ===============================
+   Table Base
+================================ */
+
+body:not(.dark-theme) {
+
+  .table-contract {
+    width: 100%!important;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    font-size: 13px;
+  }
+
+  /* Header */
+
+  .table-contract thead th {
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    text-align: right;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+  }
+
+  /* Rows */
+  .table-contract tbody tr {
+    transition: background-color 0.2s ease;
+     height: 45px!important;
+        border-bottom: 1px solid #767676!important;
+    
+  }
+
+  .table-contract tbody tr:hover {
+    background-color: #f3f4f6;
+  }
+
+  .table-contract tbody td {
+    padding: 14px 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+    color: #ffffff!important;
+    font-size: 12px;
+  }
+
+  .table-contract tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ===============================
+     Contract Number
+  ================================ */
+  .contract-number {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2563eb;
+    white-space: nowrap;
+  }
+
+  /* ===============================
+     Vendor Cell
+  ================================ */
+  .vendor-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .vendor-cell img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+   
+
+  
+  .vendor-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    line-height: 1.4;
+  }
+
+  /* ===============================
+     Date
+  ================================ */
+  .contract-date {
+    font-size: 12px;
+    font-weight: 400;
+    color: #4b5563;
+    white-space: nowrap;
+  }
+
+  /* ===============================
+     Status Bar
+  ================================ */
+  .contract-status {
+    min-width: 180px;
+  }
+}
