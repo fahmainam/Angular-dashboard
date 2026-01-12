@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BreadcrumbComponent} from "../breadcrumb/breadcrumb";
+
 import { RouterModule } from '@angular/router';
 import { ThemeService } from '../../../core/Services/theme.services/theme.services';
 
@@ -8,7 +8,7 @@ import { ThemeService } from '../../../core/Services/theme.services/theme.servic
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, BreadcrumbComponent, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
 })
