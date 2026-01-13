@@ -1,56 +1,57 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import {
   BreadcrumbService,
   BreadcrumbItem,
 } from '../../services/breadcrumb.services.ts/breadcrumb.service';
 
-interface MenuItem {
+interface SidebarMenuItem {
   label: string;
   icon?: string;
   route?: string;
-  breadcrumb?: BreadcrumbItem[];
   expanded?: boolean;
-  children?: MenuItem[];
-  badge?: number;
+  children?: SidebarMenuItem[];
+  breadcrumb?: BreadcrumbItem[];
 }
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './sidebar.html',
   styleUrls: ['./sidebar.scss'],
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+
   isCollapsed = false;
   isMobile = false;
 
   constructor(
     private router: Router,
     private breadcrumbService: BreadcrumbService
-  ) {
-    this.updateScreenMode();
+  ) {}
+
+  ngOnInit(): void {
+    this.updateViewMode();
   }
 
-  /* ✅ Detect screen size */
+  /* 🔥 Detect screen resize */
   @HostListener('window:resize')
-  updateScreenMode(): void {
+  updateViewMode(): void {
     this.isMobile = window.innerWidth <= 768;
 
-    // 🔒 Never collapse on desktop
-    if (!this.isMobile) {
-      this.isCollapsed = false;
+    // Mobile → sidebar hidden by default
+    if (this.isMobile) {
+      this.isCollapsed = true;
     }
   }
 
-  menu: MenuItem[] = [
+  menu: SidebarMenuItem[] = [
     {
       label: 'الصفحة الرئيسية',
       icon: 'bi-house',
       route: '/dashboard',
-      breadcrumb: [{ label: 'الصفحة الرئيسية', link: '/dashboard' }],
     },
     {
       label: 'الطلبات',
@@ -62,47 +63,49 @@ export class SidebarComponent {
           icon: 'bi-building',
           expanded: true,
           children: [
-            {
-              label: 'طلب أموال إضافية',
-              route: '/dashboard/funds',
-              breadcrumb: [
-                { label: 'طلبات الإدارات', link: '/dashboard/orders' },
-                { label: 'طلب أموال إضافية' },
-              ],
-            },
-            { label: 'طلب موافقة شراء كميات', route: '/orders/approval' },
-            { label: 'توصيات البنود المركزية', route: '/orders/recommendations' },
-            { label: 'مقترحات الإدارات للموازنة', route: '/orders/budget' },
-          ],
+            { label: 'طلب أموال إضافية', icon: 'bi-file-earmark-plus', route: '/dashboard/funds' },
+            { label: 'طلب موافقة شراء كاميرات', icon: 'bi-camera', route: '/orders/cameras' },
+            { label: 'توصيات البنود المركزية', icon: 'bi-link-45deg', route: '/orders/recommendations' },
+            { label: 'مقترحات الإدارات للموازنة', icon: 'bi-file-text', route: '/orders/budget' },
+          ]
         },
-      ],
+        {
+          label: 'طلبات المستودع',
+          icon: 'bi-cart',
+          expanded: false,
+          children: [
+            { label: 'الاستهلاكية / التموينية', icon: 'bi-box-seam' },
+            { label: 'طلب عهدة جديد', icon: 'bi-clipboard-check' },
+            { label: 'إجراءات العهد', icon: 'bi-arrow-repeat' },
+            { label: 'طلبات الملابس', icon: 'bi-bag' },
+          ]
+        },
+        { label: 'طلب صيانة', icon: 'bi-tools' },
+        { label: 'الاستعلامات', icon: 'bi-question-circle' },
+      ]
     },
+    { label: 'المستودعات', icon: 'bi-archive' },
+    { label: 'المحاسبة', icon: 'bi-receipt' },
+    { label: 'المشتريات', icon: 'bi-cart-check' },
   ];
 
-  /* ✅ Navigate + collapse only on mobile */
-  navigate(item: MenuItem): void {
-  if (!item.route) return;
-
-  this.breadcrumbService.set(item.breadcrumb ?? []);
-  this.router.navigateByUrl(item.route);
-
-  // 🔥 collapse only on mobile
-  if (this.isMobile) {
-    this.isCollapsed = true;
-  }
-}
-
-  toggle(item: MenuItem): void {
+  toggle(item: SidebarMenuItem): void {
     if (item.children) {
       item.expanded = !item.expanded;
     }
   }
 
-  /* ✅ Toggle button works only on mobile */
-  toggleSidebar(): void {
-  this.isCollapsed = !this.isCollapsed;
+navigate(item: SidebarMenuItem): void {
+  if (!item.route) return;
+
+  this.router.navigateByUrl(item.route);
+
+  if (this.isMobile) {
+    this.isCollapsed = true;
+  }
 }
 
+  toggleSidebar(): void {
+    this.isCollapsed = !this.isCollapsed;
   }
-
-
+}

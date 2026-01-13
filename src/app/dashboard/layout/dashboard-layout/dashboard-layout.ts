@@ -1,10 +1,14 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Subscription } from 'rxjs';
+
 import { SidebarComponent } from '../../../shared/components/sidebar/sidebar';
 import { HeaderComponent } from '../../../shared/components/header/header';
 import { BreadcrumbComponent } from '../../../shared/components/breadcrumb/breadcrumb';
-import { BreadcrumbService, BreadcrumbItem } from '../../../shared//services/breadcrumb.services.ts/breadcrumb.service';
-import { Subscription } from 'rxjs';
+import {
+  BreadcrumbService,
+  BreadcrumbItem
+} from '../../../shared/services/breadcrumb.services.ts/breadcrumb.service';
 
 @Component({
   selector: 'app-dashboard-layout',
@@ -18,18 +22,20 @@ import { Subscription } from 'rxjs';
   templateUrl: './dashboard-layout.html',
   styleUrl: './dashboard-layout.scss',
 })
-export class DashboardLayoutComponent implements OnDestroy {
+export class DashboardLayoutComponent implements OnInit, OnDestroy {
 
   breadcrumbItems: BreadcrumbItem[] = [];
-  private sub: Subscription;
+  private sub!: Subscription;
 
-  constructor(private breadcrumbService: BreadcrumbService) {
+  constructor(private breadcrumbService: BreadcrumbService) {}
+
+  ngOnInit(): void {
     this.sub = this.breadcrumbService.items$.subscribe(
-      items => this.breadcrumbItems = items
+      items => (this.breadcrumbItems = items)
     );
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 }

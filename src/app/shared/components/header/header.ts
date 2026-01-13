@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RouterModule } from '@angular/router';
+
 import { ThemeService } from '../../../core/Services/theme.services/theme.services';
 
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,8 +14,12 @@ import { ThemeService } from '../../../core/Services/theme.services/theme.servic
   styleUrls: ['./header.scss'],
 })
 export class HeaderComponent {
+  constructor(
+   
+    public themeService: ThemeService
+  ) {}
 
-constructor(public themeService: ThemeService) {}
+
 
 toggleTheme(): void {
   this.themeService.toggleTheme();

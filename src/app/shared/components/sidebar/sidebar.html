@@ -1,74 +1,80 @@
-<aside class="sidebar" [class.collapsed]="isCollapsed" dir="rtl">
+<aside
+  class="sidebar"
+  dir="rtl"
+  [class.collapsed]="isCollapsed"
+  [class.mobile]="isMobile"
+>
 
-  <!-- Header -->
-  <div class="sidebar-header d-flex align-items-center justify-content-between">
-    <div>
-      <h6 class="mb-0 fw-bold">محمد عبد الله</h6>
-      <small class="text-muted">إدارة تطوير الأنظمة</small>
+  <!-- 🔥 TOGGLE HANDLE -->
+  <button class="sidebar-toggle-btn" (click)="toggleSidebar()">
+    <i class="bi" [ngClass]="isCollapsed ? 'bi-chevron-double-left' : 'bi-chevron-double-right'"></i>
+  </button>
+
+  <!-- User -->
+ <div class="sidebar-header">
+    <div class="user-info">
+      <strong>محمد عبد الله</strong>
+      <small>إدارة تطوير الأنظمة</small>
     </div>
-
-    <button class="btn toggle-btn" (click)="toggleSidebar()">
-      <i class="bi bi-chevron-double-right"></i>
-    </button>
   </div>
 
-  <!-- Menu -->
-  <ul class="nav flex-column mt-3">
+  <!-- Search -->
+  <div class="sidebar-search">
+    <label>البحث</label>
+    <div class="search-box">
+      <i class="bi bi-search"></i>
+      <input type="text" placeholder="بحث" />
+      <span class="shortcut">⌘K</span>
+    </div>
+  </div>
 
-    <li *ngFor="let item of menu" class="nav-item">
+  <!-- Navigation -->
+  <ul class="tree-nav">
+    <ng-container *ngFor="let item of menu">
+      <li class="tree-item level-1">
 
-      <!-- Parent -->
-      <a
-        class="nav-link"
-        (click)="item.children ? toggle(item) : navigate(item)"
-      >
-        <i class="bi" [ngClass]="item.icon"></i>
-        <span class="label">{{ item.label }}</span>
+        <a class="tree-link"
+           (click)="item.children ? toggle(item) : navigate(item)">
+          <i class="bi" [ngClass]="item.icon"></i>
+          <span class="label">{{ item.label }}</span>
 
-        <span *ngIf="item.badge" class="badge">{{ item.badge }}</span>
+          <i *ngIf="item.children"
+             class="bi bi-chevron-down ms-auto"
+             [class.rotate]="item.expanded"></i>
+        </a>
 
-        <i *ngIf="item.children"
-           class="bi bi-chevron-down ms-auto"
-           [class.rotate]="item.expanded"></i>
-      </a>
+        <!-- Level 2 -->
+        <ul *ngIf="item.children && item.expanded" class="tree-submenu">
+          <ng-container *ngFor="let child of item.children">
+            <li class="tree-item level-2">
 
-      <!-- Children -->
-      <ul *ngIf="item.children && item.expanded" class="submenu">
-        <li *ngFor="let child of item.children">
+              <a class="tree-link"
+                 (click)="child.children ? toggle(child) : navigate(child)">
+                <i class="bi" [ngClass]="child.icon"></i>
+                {{ child.label }}
 
-          <a
-            class="nav-link"
-            (click)="child.children ? toggle(child) : navigate(child)"
-          >
-            <i *ngIf="child.icon" class="bi" [ngClass]="child.icon"></i>
-            {{ child.label }}
-
-            <i *ngIf="child.children"
-               class="bi bi-chevron-down ms-auto"
-               [class.rotate]="child.expanded"></i>
-          </a>
-
-          <!-- Sub children -->
-          <ul *ngIf="child.children && child.expanded" class="submenu">
-            <li *ngFor="let sub of child.children">
-              <a class="nav-link"  (click)="navigate(sub)">
-                {{ sub.label }}
+                <i *ngIf="child.children"
+                   class="bi bi-chevron-down ms-auto"
+                   [class.rotate]="child.expanded"></i>
               </a>
+
+              <!-- Level 3 -->
+              <ul *ngIf="child.children && child.expanded" class="tree-submenu">
+                <li class="tree-item level-3"
+                    *ngFor="let sub of child.children">
+                  <a class="tree-link" (click)="navigate(sub)">
+                    <i class="bi" [ngClass]="sub.icon"></i>
+                    {{ sub.label }}
+                  </a>
+                </li>
+              </ul>
+
             </li>
-          </ul>
+          </ng-container>
+        </ul>
 
-        </li>
-      </ul>
-
-    </li>
-
-    <!-- Logout -->
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/auth/login">
-        <i class="bi bi-box-arrow-right"></i>
-        <span class="label">خروج</span>
-      </a>
-    </li>
-
+      </li>
+    </ng-container>
   </ul>
+
 </aside>

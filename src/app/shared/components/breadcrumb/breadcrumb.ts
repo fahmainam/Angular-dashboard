@@ -12,4 +12,6 @@ import { BreadcrumbItem } from '../../services/breadcrumb.services.ts/breadcrumb
 })
 export class BreadcrumbComponent {
   @Input() items: BreadcrumbItem[] = [];
+
+  
 }

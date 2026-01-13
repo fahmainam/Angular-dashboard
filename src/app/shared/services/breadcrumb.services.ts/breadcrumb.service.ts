@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 export interface BreadcrumbItem {
   label: string;
@@ -9,20 +11,34 @@ export interface BreadcrumbItem {
 @Injectable({ providedIn: 'root' })
 export class BreadcrumbService {
 
-  private _items = new BehaviorSubject<BreadcrumbItem[]>([
-    { label: 'الصفحة الرئيسية', link: '/dashboard' }
-  ]);
+  private readonly _items$ = new BehaviorSubject<BreadcrumbItem[]>([]);
+  readonly items$ = this._items$.asObservable();
 
-  items$ = this._items.asObservable();
-
-  set(items: BreadcrumbItem[]) {
-    this._items.next([
-      { label: 'الصفحة الرئيسية', link: '/dashboard' },
-      ...items
-    ]);
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const items: BreadcrumbItem[] = [];
+        this.build(this.route.root, '', items);
+        this._items$.next(items);
+      });
   }
 
-  clear() {
-    this._items.next([{ label: 'الصفحة الرئيسية', link: '/dashboard' }]);
+  private build(
+    route: ActivatedRoute,
+    url: string,
+    items: BreadcrumbItem[]
+  ): void {
+    for (const child of route.children) {
+      const path = child.snapshot.url.map(s => s.path).join('/');
+      const nextUrl = path ? `${url}/${path}` : url;
+
+      const label = child.snapshot.data['breadcrumb'];
+      if (label) {
+        items.push({ label, link: nextUrl || '/dashboard' });
+      }
+
+      this.build(child, nextUrl, items);
+    }
   }
 }

@@ -27,49 +27,85 @@
     </div>
     </div>
     <div class="col-md-3">
-         <div data-bs-toggle="dropdown" class="d-flex btn border-0 profile align-items-center gap-2 px-4 flex-shrink-0">
+<div class="dropdown user-dropdown" dir="rtl">
+  <button
+    class="btn user-btn dropdown-toggle d-flex align-items-center"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    <!-- 🔽 TOGGLE ICON (LEFT SIDE) -->
+   
 
-    
-      <!-- User Info (Desktop only) -->
-        <div class="dropdown">
-        <button class="profile-btn" >
-          <i class="bi bi-person"></i>
-        </button>
+    <!-- AVATAR -->
+    <img
+      src="assets/avatar.png"
+      alt="User"
+      class="avatar mx-2"
+    />
 
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li>
-            <a class="dropdown-item">
-              <i class="bi bi-person me-2"></i>
-              الملف الشخصي
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item">
-              <i class="bi bi-gear me-2"></i>
-              الإعدادات
-            </a>
-          </li>
-          <li><hr class="dropdown-divider" /></li>
-          <li>
-            <a
-              class="dropdown-item text-danger"
-              routerLink="/auth/login"
-            >
-              <i class="bi bi-box-arrow-right me-2"></i>
-              تسجيل الخروج
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="text-end d-none d-md-block">
-        <div class="fw-semibold">{{ user.name }}</div>
-        <small class="text-muted">{{ user.role }}</small>
-      </div>
-            <i class="bi bi-chevron-down"></i>
-      <!-- Profile -->
-     
+    <!-- USER INFO -->
+    <div class="d-flex flex-column align-items-start">
+      <span class="fw-bold user-name d-none d-md-inline">
+        محمد عبد الله
+      </span>
+      <small class="text-muted small">إدارة تطوير الأنظمة</small>
     </div>
+     <i class="bi bi-chevron-down dropdown-arrow"></i>
+  </button>
+
+  <ul class="dropdown-menu dropdown-menu-end user-menu">
+    
+    <!-- USER INFO -->
+    <li class="user-header">
+      <img src="../../../../assets/avatar.png" class="avatar-lg" />
+      <div>
+        <strong>محمد عبد الله</strong>
+        <small >إدارة تطوير الأنظمة</small>
+      </div>
+      
+    </li>
+
+    <li><hr class="dropdown-divider" /></li>
+
+    <!-- DETAILS -->
+    <li class="user-detail">
+      <i class="bi bi-envelope"></i>
+      <span>m.abdullah@email.com</span>
+    </li>
+
+    <li class="user-detail">
+      <i class="bi bi-telephone"></i>
+      <span>+974 5555 8888</span>
+    </li>
+
+    <li><hr class="dropdown-divider" /></li>
+
+    <!-- ACTIONS -->
+    <li>
+      <a class="dropdown-item" href="#">
+        <i class="bi bi-person"></i>
+        الملف الشخصي
+      </a>
+    </li>
+
+    <li>
+      <a class="dropdown-item" href="#">
+        <i class="bi bi-gear"></i>
+        الإعدادات
+      </a>
+    </li>
+
+    <li>
+      <a class="dropdown-item logout" href="#">
+        <i class="bi bi-box-arrow-right"></i>
+        تسجيل الخروج
+      </a>
+    </li>
+
+  </ul>
+</div>
+
     </div>
     <div class="col-md-2">
          <div class="d-flex icons gap-2 px-4 flex-shrink-0">
@@ -156,3 +192,4 @@
 </header>
 
 <!-- Breadcrumb -->
+

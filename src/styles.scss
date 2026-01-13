@@ -53,6 +53,20 @@ body.dark-theme .icon-btn {
   
   color: #ffffff!important;
 }
+body.dark-theme .tree-nav > .tree-item:first-child > .tree-link {
+    width: 100%!important;
+    background-color: #041252!important;
+    color: #ffffff!important;
+    border-radius: 10px !important;
+}
+body.dark-theme .tree-link {
+
+  color: #949494!important;
+}
+body.dark-theme .tree-link:hover {
+
+  color: #f8fafc!important;
+}
 /* ======================================================
    HEADER & BUTTONS (GLOBAL)
 ====================================================== */
@@ -79,6 +93,9 @@ body.dark-theme .header-search input {
   background: #020617;
   border-color: #1e293b;
   color: #e5e7eb;
+    padding-right: 37px;
+    border-radius: 7px;
+    height: 34px;
 }
 
 body.dark-theme .header-search i {
@@ -263,8 +280,8 @@ body.dark-theme {
      SEARCH & FILTER
   ====================================================== */
   .search-box {
-    background: #020617;
-    border: 1px solid #1e293b;
+    background: #020617!important;  
+    border: 1px solid #1e293b !important;
   }
 
   .search-box i {
@@ -276,18 +293,18 @@ body.dark-theme {
   }
 
   .shortcut {
-    background: #020617;
-    border: 1px solid #1e293b;
+    background: #020617!important;
+    border: 1px solid #1e293b !important;
     color: #94a3b8;
   }
 
   .filter-btn {
-    background: #020617;
-    color: #e5e7eb;
+    background: #020617 !important;
+    color: #e5e7eb !important;
   }
 
   .filter-btn:hover {
-    background: #1e293b;
+    background: #1e293b !important;
   }
 
   /* ======================================================
