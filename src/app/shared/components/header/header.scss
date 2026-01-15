@@ -4,12 +4,20 @@
   box-sizing: border-box;
    font-family: "Frutiger LT Arabic";
 }
+.app-header .row {
+  display: flex;
+  flex-direction: row;
+}
+
+html[dir='rtl'] .app-header .row {
+  flex-direction: row-reverse;
+}
 
 .app-header {
   height: 80px;
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
-  direction: rtl;
+
  
 }
 
@@ -136,16 +144,17 @@
     }
     .icons{
         align-items: center;
-        padding-right: 150px !important;
+        // padding-right: 150px !important;
     }
     .system-title{
         align-items: center;
-        padding-right: 118px !important;
+        padding-right: 50px !important;
+        padding-bottom: 10px!important;
     }
     .header-logo {
 height: 60px;
         width: auto;
-        margin-right: 150px;
+        margin-right: 76px;
         margin-bottom: 11px;
         object-fit: contain;
 }

@@ -1,4 +1,4 @@
-<div  dir="rtl">
+<div  >
   <table class="table-contract table-responsive-One align-middle m-3">
     <thead >
       <tr >
@@ -12,25 +12,25 @@
     <tbody>
       <tr *ngFor="let c of contracts">
         <!-- Contract Number -->
-        <td class="contract-number number small text-primary">
+        <td class="contract-number number  text-primary">
           {{ c.number }}
         </td>
 
         <!-- Vendor -->
-        <td style="height: 48px;" class="vendor-cell box d-flex border-0 gap-2">
+        <td  class="vendor-cell box d-flex border-0 gap-2">
           <img  [src]="c.logo" alt="{{ c.vendor }}" />
-          <span  class="vendor-name small">
+          <span  class="vendor-name ">
             {{ c.vendor }}
           </span>
         </td>
 
         <!-- Date  -->
-        <td class="contract-date small">
+        <td class="contract-date ">
           {{ c.date }}
         </td>
 
         <!-- Status -->
-        <td  class="contract-status small">
+        <td  class="contract-status ">
           <app-contract-status-bar
             [percentage]="c.progress"
           ></app-contract-status-bar>

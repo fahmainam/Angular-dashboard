@@ -10,7 +10,7 @@
   }
 
   td {
-    font-size: 12px;
+    font-size: 12px!important;
     color: #434343;
     background-color: #ffffff;
     border-bottom: 1px solid #d6d6d6;
@@ -31,7 +31,7 @@
 
     th {
       color: #0042ad !important;
-      font-size: 15px !important;
+      font-size: 14px !important;
       font-weight: 600 !important;
       white-space: nowrap;
     }
@@ -105,9 +105,9 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  min-width: 220px;
+  min-width: 76px;
   padding: 6px 10px;
-  background: #f5f6f8;
+  background: #ffffff;
   border-radius: 8px;
 
   i {
@@ -143,7 +143,7 @@
   padding: 6px 12px;
   font-size: 12px;
   color: #495057;
-  background: #f5f6f8;
+  background: #ffffff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -262,4 +262,10 @@
 .rtl {
   direction: ltr;
   font-family: "Segoe UI", Tahoma, sans-serif;
+}
+@media screen and (max-width: 768px) {
+ .table-responsive {
+ 
+  overflow-x: auto;
+ }
 }

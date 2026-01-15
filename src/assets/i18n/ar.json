@@ -1,11 +1,63 @@
 {
-  "header": {
-    "title": "لوحة التحكم",
-    "language": "English"
-  },
-  "sidebar": {
-    "home": "الرئيسية",
-    "orders": "الطلبات",
-    "logout": "تسجيل الخروج"
-  }
+  "APP_TITLE": "النظام المالي",
+  "DEPARTMENT_NAME": "إدارة تطوير الأنظمة",
+
+  "SEARCH": "بحث",
+  "SEARCH_PLACEHOLDER": "بحث",
+
+  "LANGUAGE": "AR",
+
+  "DASHBOARD": "الصفحة الرئيسية",
+
+  "ORDERS": "الطلبات",
+  "DEPARTMENT_ORDERS": "طلبات الإدارات",
+  "WAREHOUSE_ORDERS": "طلبات المستودع",
+
+  "REQUEST_ADDITIONAL_FUNDS": "طلب أموال إضافية",
+  "REQUEST_CAMERA_APPROVAL": "طلب موافقة شراء كاميرات",
+  "CENTRAL_RECOMMENDATIONS": "توصيات البنود المركزية",
+  "BUDGET_PROPOSALS": "مقترحات الإدارات للموازنة",
+
+  "CONSUMABLES": "الاستهلاكية / التموينية",
+  "NEW_CUSTODY": "طلب عهدة جديد",
+  "CUSTODY_PROCEDURES": "إجراءات العهد",
+  "CLOTHING_REQUESTS": "طلبات الملابس",
+
+  "MAINTENANCE_REQUEST": "طلب صيانة",
+  "INQUIRIES": "الاستعلامات",
+
+  "WAREHOUSES": "المستودعات",
+  "ACCOUNTING": "المحاسبة",
+  "PURCHASES": "المشتريات",
+
+  "PROFILE": "الملف الشخصي",
+  "SETTINGS": "الإعدادات",
+  "LOGOUT": "تسجيل الخروج",
+
+  "MESSAGES": "الرسائل",
+  "VIEW_ALL_MESSAGES": "عرض جميع الرسائل",
+
+  "NOTIFICATIONS": "الإشعارات",
+  "VIEW_ALL_NOTIFICATIONS": "عرض جميع الإشعارات",
+
+  "CALENDAR": "التقويم",
+
+  "TOTAL_TRANSACTIONS": "إجمالي المعاملات",
+  "PAID_INVOICES": "الفواتير المدفوعة",
+  "PENDING_REQUESTS": "طلبات قيد الانتظار",
+  "TOTAL_USERS": "إجمالي المستخدمين",
+
+  "FROM_LAST_MONTH": "من الشهر الماضي",
+  "FROM_LAST_WEEK": "من الأسبوع الماضي",
+  "FROM_YESTERDAY": "من يوم أمس",
+  "FROM_LAST_YEAR": "منذ العام الماضي",
+
+  "TAB_DASHBOARD": "لوحة القيادة",
+  "TAB_PURCHASES": "المشتريات",
+  "TAB_CUSTODY": "العهد",
+  "TAB_ORDERS": "الطلبات",
+  "TAB_INVOICES": "الفواتير",
+  "TAB_CONTRACTS": "العقود والمناقصات",
+  "TAB_BUDGET": "الموازنة",
+  "NEW_TAB": "تبويب جديد"
 }

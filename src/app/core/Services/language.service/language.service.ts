@@ -1,22 +1,38 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 export class LanguageService {
-  private lang$ = new BehaviorSubject<'ar' | 'en'>('ar');
-  current$ = this.lang$.asObservable();
+  private currentLang$ = new BehaviorSubject<'en' | 'ar'>('ar');
+  private translations: any = {};
 
-  get current() {
-    return this.lang$.value;
+  constructor(private http: HttpClient) {
+    this.loadLanguage(this.currentLang$.value);
   }
 
-  toggle() {
-    this.set(this.current === 'ar' ? 'en' : 'ar');
+  get lang() {
+    return this.currentLang$.value;
   }
 
-  set(lang: 'ar' | 'en') {
-    this.lang$.next(lang);
+  setLanguage(lang: 'en' | 'ar') {
+    this.currentLang$.next(lang);
+    this.loadLanguage(lang);
+
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = lang;
+    localStorage.setItem('lang', lang);
   }
+
+  translate(key: string): string {
+    return this.translations[key] || key;
+  }
+
+  private loadLanguage(lang: string) {
+    this.http
+      .get(`/assets/i18n/${lang}.json`)
+      .subscribe((data) => (this.translations = data));
+  }
+  
 }

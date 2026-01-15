@@ -1,14 +1,29 @@
+/* ===============================
+   SIDEBAR BASE (LOGICAL)
+================================ */
 .sidebar {
   width: 280px;
   height: 100vh;
-  background: #fff;
-  border-left: 1px solid #e5e7eb;
+  background: #ffffff;
   padding: 12px;
-      overflow: hidden;
-    border-radius: 12px;
+  overflow: hidden;
+  border-radius: 12px;
+
+  position: relative;
+  z-index: 2000;
+
+  /* Sidebar position flips automatically */
+  inset-inline-start: 0;
+
+  border-inline-end: 1px solid #e5e7eb;
+
+  transition: width 0.35s ease, transform 0.35s ease;
 }
 
-/* Header */
+
+/* ===============================
+   HEADER
+================================ */
 .sidebar-header {
   padding-bottom: 12px;
   border-bottom: 1px solid #eee;
@@ -25,7 +40,9 @@
   }
 }
 
-/* Search */
+/* ===============================
+   SEARCH
+================================ */
 .sidebar-search {
   margin: 12px 0;
 
@@ -65,7 +82,9 @@
   }
 }
 
-/* TREE NAV */
+/* ===============================
+   TREE NAV
+================================ */
 .tree-nav {
   list-style: none;
   padding: 0;
@@ -81,24 +100,17 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px 8px 32px;
+width: max-content;
+  padding-block: 8px;
+  padding-inline-start: 14px;
+  padding-inline-end: 16px;
+
   font-size: 14px;
   color: #374151;
   cursor: pointer;
-  position: relative;
   text-decoration: none;
-      margin-top: 0px;
-  width: max-content;
-  i {
-    min-width: 18px;
-    font-size: 14px;
-    color: #6b7280;
-  }
-
-  &:hover {
-    color: #b4232d;
-  }
 }
+
 
 /* ACTIVE */
 .tree-item.active > .tree-link {
@@ -107,33 +119,24 @@
   border-radius: 8px;
 }
 
-/* SUBMENU */
+/* ===============================
+   SUBMENU
+================================ */
 .tree-submenu {
   list-style: none;
-  padding-right: 18px;
   margin: 0;
+  padding-inline-start: 18px;
   position: relative;
 }
 
-/* Vertical line */
 .tree-submenu::before {
   content: '';
   position: absolute;
+  inset-inline-start: 22px;
   top: 0;
-  right: 22px;
   width: 1px;
   height: 100%;
   background: #e5e7eb;
-}
-.tree-item:nth-child(5) {
-  border-top: 1px solid #e5e7eb;
-  margin-top: 12px;
-  padding-top: 12px;
-}
-.tree-nav > .tree-item:first-child > .tree-link {
-  width: 100%;
-  background-color: #ffeced !important;
-  border-radius: 10px !important;
 }
 
 /* Elbow */
@@ -142,28 +145,20 @@
   content: '';
   position: absolute;
   top: 16px;
-  right: 22px;
+  inset-inline-start: 4px;
+
   width: 12px;
   height: 8px;
-  border-right: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
-  border-bottom-right-radius: 7px;
-  margin-right: -18px;
+
+  border-inline-start: 1px solid #e5e7eb;
+  border-block-end: 1px solid #e5e7eb;
+  border-end-start-radius: 7px;
 }
 
-/* Stop line on last */
-.tree-item:last-child::after {
-  content: '';
-  position: absolute;
-  right: 22px;
-  top: 24px;
-  width: 1px;
-  height: calc(100% - 24px);
-  background: #fff;
-  border-bottom: 1px solid #4e4e4e;
-}
 
-/* Chevron */
+/* ===============================
+   CHEVRON
+================================ */
 .bi-chevron-down {
   font-size: 11px;
   transition: transform 0.2s ease;
@@ -172,34 +167,17 @@
     transform: rotate(180deg);
   }
 }
-/* ===============================
-   TOGGLE BUTTON (GLOBAL)
-================================ */
-/* ===============================
-   SIDEBAR BASE
-================================ */
-.sidebar {
-  // position: fixed;
-  // top: 0;
-  right: 0;                 /* RTL */
-  width: 280px;
-  height: 100vh;
-
-  background: #ffffff;
-  border-left: 1px solid #e5e7eb;
-
-  transform: translateX(0);
-  transition: transform 0.35s ease;
-  z-index: 2000;
-}
 
 /* ===============================
-   TOGGLE BUTTON (ATTACHED HANDLE)
+   TOGGLE HANDLE (AUTO FLIP)
 ================================ */
 .sidebar-toggle-btn {
   position: absolute;
   top: 20px;
-  left: -22px;              /* 🔥 half outside sidebar */
+
+  /* 🔥 Always attach to OUTER EDGE of sidebar */
+  inset-inline-end: -22px;
+
   width: 44px;
   height: 44px;
 
@@ -219,7 +197,7 @@
 }
 
 /* ===============================
-   DESKTOP COLLAPSE
+   COLLAPSE
 ================================ */
 .sidebar.collapsed:not(.mobile) {
   width: 80px;
@@ -232,26 +210,13 @@
   }
 }
 
-/* ===============================
-   MOBILE MODE
-================================ */
+/* Mobile */
 .sidebar.mobile {
-  width: 280px;
   position: fixed;
   top: 0;
-
 }
 
-/* 🔥 Fully hide sidebar but keep handle visible */
 .sidebar.mobile.collapsed {
   transform: translateX(calc(100% - 22px));
 }
 
-.sidebar-toggle-btn {
-  pointer-events: auto;
-}
-
-/* In mobile, hide text when open too */
-.sidebar.mobile .label {
-  display: inline;
-}

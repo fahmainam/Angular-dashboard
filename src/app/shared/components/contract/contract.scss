@@ -10,7 +10,7 @@
     object-fit: contain;
     flex-shrink: 0;
   }
-body:not(.dark-theme) tbody, td, tfoot, th, thead, tr {
+tbody, td, tfoot, th, thead, tr {
  line-height: 40px!important;
    
 .date{
@@ -31,15 +31,14 @@ body:not(.dark-theme) tbody, td, tfoot, th, thead, tr {
    Table Base
 ================================ */
 
-body:not(.dark-theme) {
 
   .table-contract {
     width: 100%!important;
     border-collapse: separate;
     border-spacing: 0;
-    border-radius: 14px;
+    border-radius: 14px!important;
     overflow: hidden;
-    background: #ffffff;
+    background: #ffffff!important;
     font-size: 13px;
   }
 
@@ -71,7 +70,7 @@ body:not(.dark-theme) {
     padding: 14px 16px;
     vertical-align: middle;
     border-bottom: 1px solid #f1f5f9;
-    color: #ffffff!important;
+    color: #000000!important;
     font-size: 12px;
   }
 
@@ -83,7 +82,7 @@ body:not(.dark-theme) {
      Contract Number
   ================================ */
   .contract-number {
-    font-size: 12px;
+    font-size: 12px!important;
     font-weight: 600;
     color: #2563eb;
     white-space: nowrap;
@@ -99,8 +98,8 @@ body:not(.dark-theme) {
   }
 
   .vendor-cell img {
-    width: 28px;
-    height: 28px;
+    // width: 28px;
+    // height: 28px;
     border-radius: 50%;
     background: #f1f5f9;
     object-fit: contain;
@@ -111,13 +110,13 @@ body:not(.dark-theme) {
 
   
   .vendor-name {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    color: #374151;
+    color: #000000;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 160px;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // max-width: 160px;
     line-height: 1.4;
   }
 
@@ -137,4 +136,11 @@ body:not(.dark-theme) {
   .contract-status {
     min-width: 180px;
   }
+
+
+@media screen and (max-width: 768px) {
+  .budget-chart-card {
+   margin-left: 0!important;
+  }
+  
 }

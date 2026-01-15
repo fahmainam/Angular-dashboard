@@ -1,11 +1,63 @@
 {
-  "header": {
-    "title": "Dashboard",
-    "language": "Arabic"
-  },
-  "sidebar": {
-    "home": "Home",
-    "orders": "Orders",
-    "logout": "Logout"
-  }
+  "APP_TITLE": "Financial System",
+  "DEPARTMENT_NAME": "Systems Development Department",
+
+  "SEARCH": "Search",
+  "SEARCH_PLACEHOLDER": "Search",
+
+  "LANGUAGE": "EN",
+
+  "DASHBOARD": "Dashboard",
+
+  "ORDERS": "Orders",
+  "DEPARTMENT_ORDERS": "Department Orders",
+  "WAREHOUSE_ORDERS": "Warehouse Orders",
+
+  "REQUEST_ADDITIONAL_FUNDS": "Request Additional Funds",
+  "REQUEST_CAMERA_APPROVAL": "Camera Purchase Approval",
+  "CENTRAL_RECOMMENDATIONS": "Central Item Recommendations",
+  "BUDGET_PROPOSALS": "Budget Proposals",
+
+  "CONSUMABLES": "Consumables",
+  "NEW_CUSTODY": "New Custody Request",
+  "CUSTODY_PROCEDURES": "Custody Procedures",
+  "CLOTHING_REQUESTS": "Clothing Requests",
+
+  "MAINTENANCE_REQUEST": "Maintenance Request",
+  "INQUIRIES": "Inquiries",
+
+  "WAREHOUSES": "Warehouses",
+  "ACCOUNTING": "Accounting",
+  "PURCHASES": "Purchases",
+
+  "PROFILE": "Profile",
+  "SETTINGS": "Settings",
+  "LOGOUT": "Logout",
+
+  "MESSAGES": "Messages",
+  "VIEW_ALL_MESSAGES": "View all messages",
+
+  "NOTIFICATIONS": "Notifications",
+  "VIEW_ALL_NOTIFICATIONS": "View all notifications",
+
+  "CALENDAR": "Calendar",
+
+  "TOTAL_TRANSACTIONS": "Total Transactions",
+  "PAID_INVOICES": "Paid Invoices",
+  "PENDING_REQUESTS": "Pending Requests",
+  "TOTAL_USERS": "Total Users",
+
+  "FROM_LAST_MONTH": "From last month",
+  "FROM_LAST_WEEK": "From last week",
+  "FROM_YESTERDAY": "From yesterday",
+  "FROM_LAST_YEAR": "From last year",
+
+  "TAB_DASHBOARD": "Dashboard",
+  "TAB_PURCHASES": "Purchases",
+  "TAB_CUSTODY": "Custody",
+  "TAB_ORDERS": "Orders",
+  "TAB_INVOICES": "Invoices",
+  "TAB_CONTRACTS": "Contracts & Tenders",
+  "TAB_BUDGET": "Budget",
+  "NEW_TAB": "New Tab"
 }

@@ -6,6 +6,7 @@ import { ContractStatusBarComponent } from '../contract-bar-status/contract-bar-
 @Component({
   selector: 'app-contracts',
   standalone: true,
+  styleUrls: ['./contract.scss'],
   imports: [
     CommonModule,
     ContractStatusBarComponent // 🔥 REQUIRED

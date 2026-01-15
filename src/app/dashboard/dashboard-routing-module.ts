@@ -18,7 +18,14 @@ const routes: Routes = [
   loadComponent: () =>
     import('../shared/components/funds.component/funds.component')
       .then(c => c.FundsComponent),
-  data: { breadcrumb: 'طلب أموال إضافية' }
+   data: { breadcrumb: 'الطلبات / طلب موافقة شراء' }
+},
+{
+  path: 'contract',
+  loadComponent: () =>
+    import('../shared/components/contract/contract')
+      .then(c => c.ContractsComponent),
+  data: { breadcrumb: 'الطلبات / طلب موافقة شراء كاميرات' }
 },
     ]
   }

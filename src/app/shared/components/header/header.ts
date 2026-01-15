@@ -5,19 +5,27 @@ import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../../core/Services/theme.services/theme.services';
 
 import { RouterModule } from '@angular/router';
+import { LanguageService } from '../../../core/Services/language.service/language.service';
+import { TranslatePipe } from '../../pipes/translate-pipe';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslatePipe],
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
 })
 export class HeaderComponent {
+
+
   constructor(
-   
+    public lang: LanguageService,
     public themeService: ThemeService
   ) {}
+
+  toggleLanguage() {
+    this.lang.setLanguage(this.lang.lang === 'ar' ? 'en' : 'ar');
+  }
 
 
 

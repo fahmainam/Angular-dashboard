@@ -3,7 +3,9 @@ import { CommonModule, NgClass, NgForOf, NgIf } from '@angular/common';
 import { StatCards } from "../stat-cards/stat-cards";
 import { OrdersTableComponent } from "../data-table/data-table";
 import { BudgetChartComponent } from "../chart/budget-chart";
-import { ContractsComponent } from "../contract/contract";
+import { PurchaseStatusComponent } from "../purchase-status/purchase-status";
+import { WarehousesComponent } from "../warehouse.component/warehouse.component";
+import { RecentTransactionsComponent } from "../recent-transactions/recent-transactions";
 
 interface Tab {
   id: number;
@@ -17,7 +19,7 @@ interface Tab {
   standalone: true,
   templateUrl: './dynamic-tabs.html',
   styleUrls: ['./dynamic-tabs.scss'],
-  imports: [CommonModule, NgForOf, NgClass, NgIf, StatCards, OrdersTableComponent, BudgetChartComponent, ContractsComponent],
+  imports: [CommonModule, NgForOf, NgClass, NgIf, StatCards, OrdersTableComponent, BudgetChartComponent, PurchaseStatusComponent, WarehousesComponent, RecentTransactionsComponent],
 })
 export class TabsComponent {
 

@@ -1,3 +1,25 @@
+/* Global direction handling */
+html[dir='rtl'] {
+  direction: rtl;
+}
+
+html[dir='ltr'] {
+  direction: ltr;
+}
+
+/* Bootstrap fixes */
+html[dir='rtl'] .dropdown-menu-end {
+  right: auto;
+  left: 0;
+}
+
+html[dir='ltr'] .dropdown-menu-end {
+  left: auto;
+  right: 0;
+}
+
+
+
 /* ======================================================
    DARK THEME ROOT (SINGLE SOURCE OF TRUTH)
 ====================================================== */
@@ -53,11 +75,19 @@ body.dark-theme .icon-btn {
   
   color: #ffffff!important;
 }
-body.dark-theme .tree-nav > .tree-item:first-child > .tree-link {
-    width: 100%!important;
-    background-color: #041252!important;
-    color: #ffffff!important;
+// body.dark-theme .tree-nav > .tree-item:first-child > .tree-link {
+//     width: 100%!important;
+//     background-color: #041252!important;
+//     color: #ffffff!important;
+//     border-radius: 10px !important;
+// }
+
+body.dark-theme {
+  .tree-nav > .tree-item:first-child > .tree-link {
+    width: 100%;
+    background-color: #1a1313 !important;
     border-radius: 10px !important;
+}
 }
 body.dark-theme .tree-link {
 

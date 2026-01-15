@@ -1,4 +1,4 @@
-<div class="dashboard-tabs" dir="rtl">
+<div class="dashboard-tabs" >
 
   <!-- Tabs bar -->
   <div class="tabs-bar">
@@ -28,35 +28,85 @@
 
 </div>
 
-<!-- TAB CONTENT -->
-<div class="tab-content-wrapper" dir="rtl">
+<div class="tab-content-wrapper container-fluid " >
 
-  <!-- Dashboard tab -->
+  <!-- Normal tab -->
   <ng-template #normalTab>
-    <div class="tab-content-card" *ngIf="activeTab">
-      <h5 class="tab-title">{{ activeTab.label }}</h5>
-      <p class="tab-content-text">{{ activeTab.content }}</p>
-     
+    <div class="row">
+      <div class="col-12">
+        <div class="tab-content-card p-3">
+          <h5 class="tab-title">{{ activeTab?.label }}</h5>
+          <p class="tab-content-text">
+            {{ activeTab?.content }}
+          </p>
+        </div>
+      </div>
     </div>
   </ng-template>
 
+  <!-- Dashboard tab -->
   <ng-container *ngIf="activeTab?.id === 1; else normalTab">
-    <div class="tab-content-card dashboard-tabs-content">
-      <app-stats-card [statsCards]="statsCards"></app-stats-card>
-      <section class="data-table">
-        <app-orders-table></app-orders-table>
-        <div class="row g-3 px-2">
-  <div class="col-12 col-md-6 ">
-    <app-budget-chart></app-budget-chart>
-  </div>
 
-  <div class="col-12 col-md-6 brands-box budget-chart-card  ">
-    <app-contracts></app-contracts>
+    <div class="row g-3">
+
+      <!-- Stats -->
+      <div class="col-12">
+  <div class="tab-content-card p-3">
+
+    <!-- ROW: Stats -->
+    <div class="row">
+      <div class="col-12">
+        <app-stats-card [statsCards]="statsCards"></app-stats-card>
+      </div>
+    </div>
+
+    <!-- ROW: Orders table -->
+    <div class="row mt-3">
+      <div class="col-12">
+        <app-orders-table></app-orders-table>
+      </div>
+    </div>
+
+    <!-- ROW: Charts -->
+    <div class="row mt-3">
+      <!-- Budget chart -->
+      <div class="col-12 col-lg-6 pt-2">
+       
+          <app-budget-chart></app-budget-chart>
+        
+      </div>
+
+      <!-- Contracts -->
+      <div class="col-12 col-lg-6 pt-2">
+      
+          <app-purchase-status></app-purchase-status>
+        
+      </div>
+    </div>
+
+     <div class="row mt-3">
+      <!-- Budget chart -->
+      <div class="col-12 col-lg-6 pt-2">
+       
+          <app-warehouses></app-warehouses>
+        
+      </div>
+
+      <!-- Contracts -->
+      <div class="col-12 col-lg-6 pt-2">
+      
+          <app-recent-transactions></app-recent-transactions>
+        
+      </div>
+    </div>
+
   </div>
 </div>
 
-      </section>
+
+
     </div>
+
   </ng-container>
 
 </div>

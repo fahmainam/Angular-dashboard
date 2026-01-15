@@ -1,195 +1,188 @@
 <header class="app-header px-3 py-2">
-    <!-- <h5>{{ lang.translate('dashboard') }}</h5> -->
   <div class="row align-items-center gx-0">
-     <div class="col-md-2"> 
-        <div class="d-flex align-items-center flex-shrink-0">
- <img
-  src="assets/moi.png"
-  class="header-logo  d-md-block px-2"
-  alt="MOI Logo"
-/>
+    <div class="col-12 col-md-2">
+      <div class="d-flex align-items-center flex-shrink-0">
+        <img src="assets/moi.png" class="header-logo  d-md-block px-2" alt="MOI Logo" />
 
-    </div></div>
-    <div class="col-md-3 ">
-       
-        <div class="system-title  px-3" dir="rtl">
-  <span class="main-title"><h5>النظام المالي</h5></span>
-  <span class="divider"></span>
-  <span class="sub-title">إدارة تطوير الأنظمة</span>
-</div>
-    </div>
-    <div class="col-md-2">
-         <div class="flex-grow-1 d-none d-md-flex justify-content-center">
-      <div class="header-search">
-        <input type="text" class="form-control" placeholder="بحث" />
-        <i class="bi bi-search"></i>
       </div>
     </div>
-    </div>
-    <div class="col-md-3">
-<div class="dropdown user-dropdown" dir="rtl">
-  <button
-    class="btn user-btn dropdown-toggle d-flex align-items-center"
-    type="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    <!-- 🔽 TOGGLE ICON (LEFT SIDE) -->
-   
-
-    <!-- AVATAR -->
-    <img
-      src="assets/avatar.png"
-      alt="User"
-      class="avatar mx-2"
-    />
-
-    <!-- USER INFO -->
-    <div class="d-flex flex-column align-items-start">
-      <span class="fw-bold user-name d-none d-md-inline">
-        محمد عبد الله
-      </span>
-      <small class="text-muted small">إدارة تطوير الأنظمة</small>
-    </div>
-     <i class="bi bi-chevron-down dropdown-arrow"></i>
-  </button>
-
-  <ul class="dropdown-menu dropdown-menu-end user-menu">
-    
-    <!-- USER INFO -->
-    <li class="user-header">
-      <img src="../../../../assets/avatar.png" class="avatar-lg" />
-      <div>
-        <strong>محمد عبد الله</strong>
-        <small >إدارة تطوير الأنظمة</small>
+    <div class="col-12 col-md-3">
+      <div class="system-title  px-3" >
+        <span class="main-title">
+         <h5>{{ 'APP_TITLE' | t }}</h5>
+        </span>
+        <span class="divider"></span>
+        <span class="sub-title">{{ 'DEPARTMENT_NAME' | t }}</span>
       </div>
-      
-    </li>
-
-    <li><hr class="dropdown-divider" /></li>
-
-    <!-- DETAILS -->
-    <li class="user-detail">
-      <i class="bi bi-envelope"></i>
-      <span>m.abdullah@email.com</span>
-    </li>
-
-    <li class="user-detail">
-      <i class="bi bi-telephone"></i>
-      <span>+974 5555 8888</span>
-    </li>
-
-    <li><hr class="dropdown-divider" /></li>
-
-    <!-- ACTIONS -->
-    <li>
-      <a class="dropdown-item" href="#">
-        <i class="bi bi-person"></i>
-        الملف الشخصي
-      </a>
-    </li>
-
-    <li>
-      <a class="dropdown-item" href="#">
-        <i class="bi bi-gear"></i>
-        الإعدادات
-      </a>
-    </li>
-
-    <li>
-      <a class="dropdown-item logout" href="#">
-        <i class="bi bi-box-arrow-right"></i>
-        تسجيل الخروج
-      </a>
-    </li>
-
-  </ul>
-</div>
-
     </div>
-    <div class="col-md-2">
-         <div class="d-flex icons gap-2 px-4 flex-shrink-0">
-         <!-- Night Mode -->
-<button class="btn icon-btn theme-toggle" (click)="toggleTheme()">
-  <i class="bi" [class.bi-moon]="!themeService.isDark()"
-             [class.bi-sun]="themeService.isDark()"></i>
-</button>
+    <div class="col-12 col-md-2">
+      <div class="flex-grow-1  d-md-flex justify-content-center">
+        <div class="header-search">
+          <input type="text" class="form-control" placeholder="بحث" />
+          <i class="bi bi-search"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="dropdown user-dropdown" >
+        <button class="btn user-btn dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <!-- 🔽 TOGGLE ICON (LEFT SIDE) -->
 
 
-      <!-- Calendar -->
-      <button class="icon-btn" title="التقويم">
-        <i class="bi bi-calendar-event"></i>
-      </button>
+          <!-- AVATAR -->
+          <img src="assets/avatar.png" alt="User" class="avatar mx-2" />
 
-      <!-- Messages -->
-      <div class="dropdown">
-        <button
-          class="icon-btn position-relative"
-          data-bs-toggle="dropdown"
-          title="الرسائل"
-        >
-          <i class="bi bi-chat-dots"></i>
-          <span class="badge  notification-badge">3</span>
+          <!-- USER INFO -->
+          <div class="d-flex flex-column align-items-start">
+            <span class="fw-bold user-name d-none d-md-inline">
+              محمد عبد الله
+            </span>
+            <small class="text-muted small">إدارة تطوير الأنظمة</small>
+              
+          </div>
+          <i class="bi bi-chevron-down dropdown-arrow"></i>
         </button>
 
-        <ul class="dropdown-menu dropdown-menu-end notifications-dropdown">
-          <li class="dropdown-header">الرسائل</li>
+        <ul class="dropdown-menu dropdown-menu-end user-menu">
+
+          <!-- USER INFO -->
+          <li class="user-header">
+            <img src="../../../../assets/avatar.png" class="avatar-lg" />
+            <div>
+              <strong>محمد عبد الله </strong>
+              <h5>{{ 'APP_TITLE' | t }}</h5>
+              <small>إدارة تطوير الأنظمة</small>
+            </div>
+
+          </li>
+
           <li>
-            <a class="dropdown-item">
-              <strong>الإدارة</strong>
-              <div class="text-muted small">يرجى مراجعة التقرير</div>
+            <hr class="dropdown-divider" />
+          </li>
+
+          <!-- DETAILS -->
+          <li class="user-detail">
+            <i class="bi bi-envelope"></i>
+            <span>m.abdullah@email.com</span>
+          </li>
+
+          <li class="user-detail">
+            <i class="bi bi-telephone"></i>
+            <span>+974 5555 8888</span>
+          </li>
+
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+
+          <!-- ACTIONS -->
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-person"></i>
+              الملف الشخصي
             </a>
           </li>
-          <li><hr class="dropdown-divider" /></li>
+
           <li>
-            <a class="dropdown-item text-center text-primary">
-              عرض جميع الرسائل
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-gear"></i>
+              الإعدادات
             </a>
           </li>
+
+          <li>
+            <a class="dropdown-item logout" href="#">
+              <i class="bi bi-box-arrow-right"></i>
+              تسجيل الخروج
+            </a>
+          </li>
+
         </ul>
       </div>
+    </div>
+    <div class="col-6 col-md-2">
+      <div class="d-flex icons gap-2 px-4 flex-shrink-0">
 
-      <!-- Notifications -->
-      <div class="dropdown">
-        <button
-          class="icon-btn position-relative"
-          data-bs-toggle="dropdown"
-          title="الإشعارات"
-        >
-          <i class="bi bi-bell-fill"></i>
-          <span class="badge notification-badge">
-            {{ notifications.length }}
-          </span>
+<button class="btn icon-btn" mat-button (click)="toggleLanguage()">
+       {{ 'LANGUAGE' | t }}
+    </button>
+
+        <!-- Night Mode -->
+        <button class="btn icon-btn theme-toggle" (click)="toggleTheme()">
+          <i class="bi" [class.bi-moon]="!themeService.isDark()" [class.bi-sun]="themeService.isDark()"></i>
         </button>
 
-        <ul class="dropdown-menu dropdown-menu-end notifications-dropdown">
-          <li class="dropdown-header">الإشعارات</li>
-          <li *ngFor="let n of notifications">
-            <a class="dropdown-item">
-              <div class="fw-semibold">{{ n.text }}</div>
-              <small class="text-muted">{{ n.time }}</small>
-            </a>
-          </li>
-          <li><hr class="dropdown-divider" /></li>
-          <li>
-            <a class="dropdown-item text-center text-primary">
-              عرض جميع الإشعارات
-            </a>
-          </li>
-        </ul>
+
+        <!-- Calendar -->
+        <button class="icon-btn" title="التقويم">
+          <i class="bi bi-calendar-event"></i>
+        </button>
+
+        <!-- Messages -->
+        <div class="dropdown">
+          <button class="icon-btn position-relative" data-bs-toggle="dropdown" title="الرسائل">
+            <i class="bi bi-chat-dots"></i>
+            <span class="badge  notification-badge">3</span>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end notifications-dropdown">
+            <li class="dropdown-header">الرسائل</li>
+            <li>
+              <a class="dropdown-item">
+                <strong>الإدارة</strong>
+                <div class="text-muted small">يرجى مراجعة التقرير</div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item text-center text-primary">
+                عرض جميع الرسائل
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Notifications -->
+        <div class="dropdown">
+          <button class="icon-btn position-relative" data-bs-toggle="dropdown" title="الإشعارات">
+            <i class="bi bi-bell-fill"></i>
+            <span class="badge notification-badge">
+              {{ notifications.length }}
+            </span>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end notifications-dropdown">
+            <li class="dropdown-header">الإشعارات</li>
+            <li *ngFor="let n of notifications">
+              <a class="dropdown-item">
+                <div class="fw-semibold">{{ n.text }}</div>
+                <small class="text-muted">{{ n.time }}</small>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item text-center text-primary">
+                عرض جميع الإشعارات
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Language Toggle -->
+
+
+
+
       </div>
-      <!-- Language Toggle -->
-
-
-
-
- </div>
-
     </div>
-</div>
-  
-  
+  </div>
+
+
+
 </header>
 
 <!-- Breadcrumb -->
-

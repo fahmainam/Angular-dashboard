@@ -1,0 +1,131 @@
+.transactions-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* HEADER */
+.transactions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+
+  .title {
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .left-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f3f4f6;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+
+    input {
+      border: none;
+      outline: none;
+      background: transparent;
+      width: 120px;
+    }
+
+    i {
+      color: #9ca3af;
+    }
+
+    .key {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 0 6px;
+      font-size: 11px;
+    }
+  }
+
+  .filter-btn {
+    background: #f3f4f6;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+}
+
+/* TABLE */
+.transactions-table {
+  th {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 600;
+  }
+
+  td {
+    font-size: 13px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .menu {
+    color: #9ca3af;
+    cursor: pointer;
+  }
+
+  .code {
+    color: #6366f1;
+    font-weight: 500;
+  }
+
+  .employee {
+    .emp-info {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      strong {
+        font-size: 13px;
+      }
+
+      small {
+        font-size: 11px;
+        color: #6b7280;
+      }
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      background: #f3f4f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6b7280;
+    }
+  }
+
+  .duration {
+    font-weight: 600;
+  }
+}
+
+/* FOOTER */
+.transactions-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+  padding-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}

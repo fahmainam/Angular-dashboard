@@ -1,0 +1,76 @@
+<div class="warehouse-card" >
+
+  <!-- Header -->
+  <div class="warehouse-header">
+      <h5 class="title">
+      المستودعات
+      <i class="bi bi-box-seam"></i>
+    </h5>
+    <div class="filters">
+      <button
+        class="btn"
+        [class.active]="filter === 'high'"
+        (click)="setFilter('high')"
+      >
+        الأرصدة المرتفعة
+      </button>
+
+      <button
+        class="btn"
+        [class.active]="filter === 'low'"
+        (click)="setFilter('low')"
+      >
+        الأرصدة المنخفضة
+      </button>
+    </div>
+
+  
+  </div>
+
+  <!-- Table -->
+  <div class="table-responsive">
+    <table class="table warehouse-table">
+      <thead>
+        <tr>
+         
+          <th>رقم المنتج</th>
+          <th>اسم المنتج</th>
+          <th>الكمية الحالية</th>
+          <th>أقل حد للطلب</th>
+          <th>أعلى حد للطلب</th>
+        <th>القائمة</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of items">
+          
+
+          <td class="code">{{ item.code }}</td>
+
+          <td>{{ item.name }}</td>
+
+          <td class="qty">{{ item.currentQty }}</td>
+
+          <td class="limit low">
+            <i class="bi bi-graph-down-arrow"></i>
+            {{ item.minLimit | number:'2.0' }}
+          </td>
+
+          <td class="limit high">
+            <i class="bi bi-graph-up-arrow"></i>
+            {{ item.maxLimit | number:'2.0' }}
+          </td>
+
+          <td class="menu">⋮</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div class="warehouse-footer">
+    عرض 256 معاملة أخرى
+  </div>
+
+</div>

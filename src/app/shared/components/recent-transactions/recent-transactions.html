@@ -1,0 +1,70 @@
+<div class="transactions-card" >
+ 
+  <!-- HEADER -->
+  <div class="transactions-header">
+    <h5 class="title">
+      المعاملات الأخيرة
+      <i class="bi bi-layers"></i>
+    </h5>
+    <div class="left-actions">
+      <div class="search-box">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="بحث" />
+        <span class="key">K</span>
+      </div>
+
+      <button class="btn filter-btn">
+        <i class="bi bi-sliders"></i>
+        التصفية
+      </button>
+    </div>
+
+   
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-responsive">
+    <table class="table transactions-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>المدة</th>
+          <th>موظف المسؤول</th>
+          <th>نوع المعاملة</th>
+          <th>رقم المعاملة</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let t of transactions">
+          <td class="menu">⋮</td>
+
+          <td class="duration">{{ t.duration }}</td>
+
+          <td class="employee">
+            <div class="emp-info">
+              <div class="avatar">
+                <i class="bi bi-person"></i>
+              </div>
+              <div class="d-flex flex-column">
+                <strong>{{ t.employee }}</strong>
+                <small>{{ t.email }}</small>
+              </div>
+            </div>
+          </td>
+
+          <td>{{ t.type }}</td>
+
+          <td class="code">{{ t.id }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="transactions-footer">
+    <i class="bi bi-arrow-repeat"></i>
+    عرض 256 معاملة أخرى
+  </div>
+
+</div>

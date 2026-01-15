@@ -1,7 +1,7 @@
 .dashboard-tabs {
   direction: rtl;
 //   background: #ffffff;
-  padding: 7px 0px 0;
+  padding: 7px 12px 0;
  
 //   border-bottom: 1px solid #e5e7eb;
 }
@@ -90,7 +90,7 @@
 .tab-content {
 //   border: 1px solid #e5e7eb;
   border-top: none; /* connects to tab pill */
-  padding: 16px;
+  // padding: 16px;
   
   background: #ffffff!important;
   border-radius: 0 0 14px 14px;
@@ -101,14 +101,33 @@
 }
 .tab-content-card {
         background-color: white!important;
-    padding: 15px!important;
-        margin-left: 13px;
-    border-top-left-radius: 14px;
+    // padding: 15px!important;
+        margin-right: 0;
+
+    border-top-left-radius: 16px;
     border-top: 1px solid #e5e7eb;
-    border-bottom-right-radius: 14px;
+    border-bottom-right-radius: 16px;
     border-bottom: 1px solid #e5e7eb;
-    border-bottom-left-radius: 14px;
+    border-bottom-left-radius: 16px;
     border-left: 1px solid #e5e7eb;
+    //  border-top-right-radius: 16px;
+    border-right: 1px solid #e5e7eb;
+   
+
+}
+.tab-content {
+        background-color: white!important;
+    // padding: 15px!important;
+        margin-right: -11px;
+
+    border-top-left-radius: 16px;
+    border-top: 1px solid #e5e7eb;
+    border-bottom-right-radius: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    border-bottom-left-radius: 16px;
+    border-left: 1px solid #e5e7eb;
+     border-top-right-radius: 16px;
+    border-right: 1px solid #e5e7eb;
    
 
 }

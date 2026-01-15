@@ -64,9 +64,9 @@ export class SidebarComponent implements OnInit {
           expanded: true,
           children: [
             { label: 'طلب أموال إضافية', icon: 'bi-file-earmark-plus', route: '/dashboard/funds' },
-            { label: 'طلب موافقة شراء كاميرات', icon: 'bi-camera', route: '/orders/cameras' },
-            { label: 'توصيات البنود المركزية', icon: 'bi-link-45deg', route: '/orders/recommendations' },
-            { label: 'مقترحات الإدارات للموازنة', icon: 'bi-file-text', route: '/orders/budget' },
+            { label: 'طلب موافقة شراء كاميرات', icon: 'bi-camera', route: '/dashboard/contract' },
+            { label: 'توصيات البنود المركزية', icon: 'bi-link-45deg', route: '/dashboard/recommendations' },
+            { label: 'مقترحات الإدارات للموازنة', icon: 'bi-file-text', route: '/dashboard/budget' },
           ]
         },
         {
