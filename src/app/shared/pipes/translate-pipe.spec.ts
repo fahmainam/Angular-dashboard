@@ -1,4 +1,5 @@
-import { TranslatePipe } from './translate-pipe';
+import { TranslatePipe } from "@ngx-translate/core";
+
 
 describe('TranslatePipe', () => {
   it('create an instance', () => {

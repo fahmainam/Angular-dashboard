@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import {
   BreadcrumbService,
   BreadcrumbItem,
@@ -26,6 +27,7 @@ export class SidebarComponent implements OnInit {
 
   isCollapsed = false;
   isMobile = false;
+  breadcrumbs$ = new BehaviorSubject<BreadcrumbItem[]>([]);
 
   constructor(
     private router: Router,
@@ -37,16 +39,34 @@ export class SidebarComponent implements OnInit {
   }
 
   /* 🔥 Detect screen resize */
-  @HostListener('window:resize')
-  updateViewMode(): void {
-    this.isMobile = window.innerWidth <= 768;
+@HostListener('window:resize')
+updateViewMode(): void {
+  const mobile = window.innerWidth <= 768;
 
-    // Mobile → sidebar hidden by default
-    if (this.isMobile) {
+  // 🔒 Only react when switching mode
+  if (mobile !== this.isMobile) {
+    // this.isMobile = mobile;
+
+    // Default only when ENTERING mobile
+    if (mobile) {
       this.isCollapsed = true;
-    }
+      // this.isMobile = mobile;
+    } 
   }
+}
+  clearBreadcrumbs(): void {
+    this.breadcrumbs$.next([]);
 
+  }
+toggleSidebar(): void {
+  this.isCollapsed = !this.isCollapsed;
+
+
+}
+
+  /* ===============================
+     MENU CONFIG
+  =============================== */
   menu: SidebarMenuItem[] = [
     {
       label: 'الصفحة الرئيسية',
@@ -89,23 +109,26 @@ export class SidebarComponent implements OnInit {
     { label: 'المشتريات', icon: 'bi-cart-check' },
   ];
 
+  /* ===============================
+     TREE TOGGLE
+  =============================== */
   toggle(item: SidebarMenuItem): void {
     if (item.children) {
       item.expanded = !item.expanded;
     }
   }
 
-navigate(item: SidebarMenuItem): void {
-  if (!item.route) return;
+  /* ===============================
+     NAVIGATION
+  =============================== */
+  navigate(item: SidebarMenuItem): void {
+    if (!item.route) return;
 
-  this.router.navigateByUrl(item.route);
+    this.router.navigateByUrl(item.route);
 
-  if (this.isMobile) {
-    this.isCollapsed = true;
-  }
-}
-
-  toggleSidebar(): void {
-    this.isCollapsed = !this.isCollapsed;
+    // 🔥 AUTO-CLOSE ON MOBILE
+    if (this.isMobile) {
+      this.isCollapsed = true;
+    }
   }
 }

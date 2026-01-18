@@ -2,23 +2,23 @@
    SIDEBAR BASE (LOGICAL)
 ================================ */
 .sidebar {
-  width: 280px;
-  height: 100vh;
+  position: relative;        /* 🔥 CRITICAL FIX */
+  top: 0;
+  bottom: 0;
+
   background: #ffffff;
   padding: 12px;
   overflow: hidden;
   border-radius: 12px;
 
-  position: relative;
   z-index: 2000;
-
+  
   /* Sidebar position flips automatically */
   inset-inline-start: 0;
-
   border-inline-end: 1px solid #e5e7eb;
-
   transition: width 0.35s ease, transform 0.35s ease;
 }
+
 
 
 /* ===============================
@@ -100,11 +100,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-width: max-content;
+  width: max-content;
   padding-block: 8px;
   padding-inline-start: 14px;
   padding-inline-end: 16px;
-
   font-size: 14px;
   color: #374151;
   cursor: pointer;
@@ -146,10 +145,8 @@ width: max-content;
   position: absolute;
   top: 16px;
   inset-inline-start: 4px;
-
   width: 12px;
   height: 8px;
-
   border-inline-start: 1px solid #e5e7eb;
   border-block-end: 1px solid #e5e7eb;
   border-end-start-radius: 7px;
@@ -174,27 +171,14 @@ width: max-content;
 .sidebar-toggle-btn {
   position: absolute;
   top: 20px;
-
-  /* 🔥 Always attach to OUTER EDGE of sidebar */
   inset-inline-end: -22px;
-
   width: 44px;
   height: 44px;
-
-  border-radius: 12px;
-  border: none;
-
-  background: #b4232d;
-  color: #ffffff;
-  font-size: 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  z-index: 3000;
+  z-index: 5000;
+  pointer-events: auto;
 }
+
+
 
 /* ===============================
    COLLAPSE
@@ -210,13 +194,85 @@ width: max-content;
   }
 }
 
-/* Mobile */
+/* ===============================
+   SIDEBAR BASE
+================================ */
+
+
+/* ===============================
+   PANEL (THIS IS WHAT MOVES)
+================================ */
+.sidebar-panel {
+  
+  width: 280px;
+  height: 100%;
+  background: #fff;
+
+  /* default visible */
+  transform: translateX(0);
+  transition: transform 0.35s ease;
+}
+
+/* ===============================
+   TOGGLE BUTTON
+================================ */
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 20px;
+  inset-inline-end: -22px;
+
+  width: 44px;
+  height: 44px;
+  z-index: 5000;
+  pointer-events: auto;
+}
+
+/* RTL toggle position */
+html[dir='rtl'] .sidebar-toggle-btn {
+  inset-inline-end: auto;
+  inset-inline-start: -22px;
+}
+
+/* ===============================
+   DESKTOP COLLAPSE
+================================ */
+.sidebar.collapsed:not(.mobile) {
+  width: 80px;
+ 
+
+  .label,
+  .tree-submenu,
+  .sidebar-search,
+  .sidebar-header small {
+    display: none;
+  }
+}
+
+/* ===============================
+   MOBILE MODE
+================================ */
 .sidebar.mobile {
   position: fixed;
+}
+
+/* ===============================
+   MOBILE COLLAPSE (THIS NOW WORKS)
+================================ */
+
+/* RTL → slide out to the right */
+html[dir='rtl'] .sidebar.mobile.collapsed .sidebar-panel {
+  transform: translateX(100%);
+}
+
+/* LTR → slide out to the left */
+html[dir='ltr'] .sidebar.mobile.collapsed .sidebar-panel {
+  transform: translateX(-100%);
+}
+@media screen and (max-width: 450px) {
+  .sidebar {
+  position: fixed;        /* 🔥 CRITICAL FIX */
   top: 0;
+  bottom: 0;
 }
 
-.sidebar.mobile.collapsed {
-  transform: translateX(calc(100% - 22px));
 }
-

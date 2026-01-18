@@ -1,16 +1,15 @@
-<aside
-  class="sidebar"
- 
-  [class.collapsed]="isCollapsed"
-  [class.mobile]="isMobile"
->
-
-  <!-- 🔥 TOGGLE HANDLE -->
-  <button class="sidebar-toggle-btn" (click)="toggleSidebar()">
-    <i class="bi" [ngClass]="isCollapsed ? 'bi-chevron-double-left' : 'bi-chevron-double-right'"></i>
+<aside class="sidebar" [class.mobile]="isMobile" [class.collapsed]="isCollapsed">
+  <!-- TOGGLE (STATIC, NEVER MOVES) -->
+   <button class="sidebar-toggle-btn" (click)="toggleSidebar()">
+    <i
+      class="bi"
+      [ngClass]="isCollapsed ? 'bi-chevron-left' : 'bi-chevron-right'"
+    ></i>
   </button>
 
-  <!-- User -->
+  <!-- 🔥 THIS IS THE ONLY MOVING ELEMENT -->
+  <div class="sidebar-panel">
+  
  <div class="sidebar-header">
     <div class="user-info">
       <strong>محمد عبد الله</strong>
@@ -76,5 +75,6 @@
       </li>
     </ng-container>
   </ul>
+</div>
 
 </aside>
