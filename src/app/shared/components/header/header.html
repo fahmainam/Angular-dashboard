@@ -25,7 +25,7 @@
     </div>
     <div class="col-6 col-md-3">
       <div class="dropdown user-dropdown" >
-        <button class="btn user-btn dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown"
+        <button class="btn user-btn p-2 dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown"
           aria-expanded="false">
           <!-- 🔽 TOGGLE ICON (LEFT SIDE) -->
 
@@ -104,24 +104,24 @@
     <div class="col-6 col-md-2">
       <div class="d-flex icons gap-2 px-4 flex-shrink-0">
 
-<button class="btn icon-btn" mat-button (click)="toggleLanguage()">
+<button class="btn p-2" mat-button (click)="toggleLanguage()">
        {{ 'LANGUAGE' | t }}
     </button>
 
         <!-- Night Mode -->
-        <button class="btn icon-btn theme-toggle" (click)="toggleTheme()">
+        <button class="btn p-2 theme-toggle" (click)="toggleTheme()">
           <i class="bi" [class.bi-moon]="!themeService.isDark()" [class.bi-sun]="themeService.isDark()"></i>
         </button>
 
 
         <!-- Calendar -->
-        <button class="icon-btn" title="التقويم">
+        <button class="btn p-2" title="التقويم">
           <i class="bi bi-calendar-event"></i>
         </button>
 
         <!-- Messages -->
         <div class="dropdown">
-          <button class="icon-btn position-relative" data-bs-toggle="dropdown" title="الرسائل">
+          <button class="btn p-2 position-relative" data-bs-toggle="dropdown" title="الرسائل">
             <i class="bi bi-chat-dots"></i>
             <span class="badge  notification-badge">3</span>
           </button>
@@ -147,7 +147,7 @@
 
         <!-- Notifications -->
         <div class="dropdown">
-          <button class="icon-btn position-relative" data-bs-toggle="dropdown" title="الإشعارات">
+          <button class="p-2 position-relative" data-bs-toggle="dropdown" title="الإشعارات">
             <i class="bi bi-bell-fill"></i>
             <span class="badge notification-badge">
               {{ notifications.length }}

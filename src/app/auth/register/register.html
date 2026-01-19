@@ -16,17 +16,17 @@
   <div class="auth-form-wrapper">
     <div class="auth-card">
 
-      <h3 class="title">النظام المالي</h3>
-      <p class="subtitle">إنشاء حساب جديد</p>
+      <h3 class="title text-end">النظام المالي</h3>
+      <p class="subtitle text-end">إنشاء حساب جديد</p>
 
       <form [formGroup]="registerForm" (ngSubmit)="submit()">
 
         <!-- Full Name -->
-        <div class="form-group">
+        <div class="form-group text-end">
           <label>الاسم الكامل</label>
           <input
             type="text"
-            class="form-control"
+            class="form-control text-end"
             formControlName="name"
             placeholder="الاسم الكامل"
           />
@@ -36,11 +36,11 @@
         </div>
 
         <!-- Email -->
-        <div class="form-group">
+        <div class="form-group text-end">
           <label>البريد الإلكتروني</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-end"
             formControlName="email"
             placeholder="mail@moi.gov.qa"
           />
@@ -50,30 +50,30 @@
         </div>
 
         <!-- Password -->
-        <div class="form-group">
+        <div class="form-group text-end">
           <label>كلمة المرور</label>
           <input
             type="password"
-            class="form-control"
+            class="form-control text-end"
             formControlName="password"
             placeholder="********"
           />
-          <small class="text-danger" *ngIf="submitted && f('password')?.invalid">
+          <small class="text-danger text-end " *ngIf="submitted && f('password')?.invalid">
             كلمة المرور لا تقل عن 6 أحرف
           </small>
         </div>
 
         <!-- Confirm Password -->
-        <div class="form-group">
+        <div class="form-group text-end">
           <label>تأكيد كلمة المرور</label>
           <input
             type="password"
-            class="form-control"
+            class="form-control text-end"
             formControlName="confirmPassword"
             placeholder="********"
           />
           <small
-            class="text-danger"
+            class="text-danger text-end"
             *ngIf="submitted && registerForm.errors?.['passwordMismatch']"
           >
             كلمات المرور غير متطابقة
@@ -81,7 +81,7 @@
         </div>
 
         <!-- Submit -->
-        <button type="submit" class="btn btn-auth w-100">
+        <button type="submit" class="btn btn-auth w-100 ">
           إنشاء حساب
         </button>
 

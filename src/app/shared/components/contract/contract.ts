@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContractStatusBarComponent } from '../contract-bar-status/contract-bar-status';
+import { UserListComponent } from "../../../user/user";
 
 
 @Component({
@@ -10,7 +11,9 @@ import { ContractStatusBarComponent } from '../contract-bar-status/contract-bar-
   imports: [
     CommonModule,
     ContractStatusBarComponent // 🔥 REQUIRED
-  ],
+    ,
+    UserListComponent
+],
   templateUrl: './contract.html',
 })
 export class ContractsComponent {

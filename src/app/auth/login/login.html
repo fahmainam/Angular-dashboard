@@ -4,7 +4,7 @@
   <div class="login-visual d-none d-lg-flex">
     <div class="overlay"></div>
 
-    <div class="visual-content">
+    <div class="visual-content text-end">
       <h1>ابدأ بتحويل أفكارك إلى حقيقة</h1>
       <p>أنشئ حسابك وابدأ باستخدام النظام المالي بسهولة وأمان</p>
     </div>
@@ -14,29 +14,29 @@
   <div class="login-form-wrapper">
     <div class="login-card">
 
-      <h3 class="title">النظام المالي</h3>
+      <h3 class="title text-end">النظام المالي</h3>
 
       <!-- LOGIN MODE -->
       <ng-container *ngIf="!isForgotMode">
-        <p class="subtitle">تسجيل الدخول</p>
+        <p class="subtitle text-end">تسجيل الدخول</p>
 
         <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
 
-          <div class="form-group">
+          <div class="form-group text-end">
             <label>اسم المستخدم</label>
             <input
               type="email"
-              class="form-control"
+              class="form-control text-end"
               placeholder="mail@moi.gov.qa"
               formControlName="email"
             />
           </div>
 
-          <div class="form-group">
+          <div class="form-group text-end">
             <label>كلمة المرور</label>
             <input
               type="password"
-              class="form-control"
+              class="form-control text-end"
               placeholder="********"
               formControlName="password"
             />

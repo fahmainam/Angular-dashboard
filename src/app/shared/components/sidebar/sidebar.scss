@@ -164,12 +164,17 @@
     transform: rotate(180deg);
   }
 }
-
+.bi-chevron-right::before {
+  padding-left: 12px!important;
+}
 /* ===============================
    TOGGLE HANDLE (AUTO FLIP)
 ================================ */
 .sidebar-toggle-btn {
   position: absolute;
+      border-radius: 12px;
+    color: wheat;
+    background-color: maroon;
   top: 20px;
   inset-inline-end: -22px;
   width: 44px;
