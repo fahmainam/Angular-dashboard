@@ -25,9 +25,10 @@ html[dir='rtl'] .app-header .row {
 .icon-btn {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #fff;
+  border-radius: 10px!important;
+    border: 1px solid #f0eded !important;
+    background: #fff !important;
+    box-shadow: #d0d3d6 0px 2px 4px 0px!important;
   display: flex;
   align-items: center;
   justify-content: center;

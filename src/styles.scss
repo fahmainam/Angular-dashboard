@@ -252,9 +252,9 @@ body.dark-theme .app-breadcrumb{
 body.dark-theme .breadcrumb-item.active{
   color: var(--text-main) !important;
 }
-body.dark-theme .header-logo img{
+body.dark-theme .header-logo {
   
-  filter: invert(-1)!important;
+   filter: brightness(0) invert(1)!important;
 }
 body.dark-theme .h5, .h4, .h3, .h2, .h1, h1, h2, h3, h4, h5 {
   color: var(--text-main) !important;
@@ -314,4 +314,25 @@ body.dark-theme .sidebar-search .shortcut {
 body.dark-theme .avatar {
   background-color: #000000 !important;
   border: 2px solid #3f3838 !important;
+}
+body.dark-theme .icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px!important;
+    border: 1px solid #000000 !important;
+    background: #242323 !important;
+    box-shadow: #053667 0px 2px 4px 0px!important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  i {
+    font-size: 16px;
+    color: #767d87!important;
+  }
+
+  &:hover {
+    background: #f3f4f6;
+  }
 }
